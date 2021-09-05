@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数论test | Ddmiurge&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="概率期望Catalan Number搬运自旧博客" />
+  
+  
+  
+  
+  <meta name="description" content="很久以前一个数论的test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数论test">
+<meta property="og:url" content="http://example.com/2021/09/05/%E6%95%B0%E8%AE%BAtest/index.html">
+<meta property="og:site_name" content="Ddmiurge&#39;s blog">
+<meta property="og:description" content="很久以前一个数论的test">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-05T02:20:18.585Z">
+<meta property="article:modified_time" content="2021-09-05T02:20:19.593Z">
+<meta property="article:author" content="Ddmiurge">
+<meta property="article:tag" content="概率期望">
+<meta property="article:tag" content="Catalan Number">
+<meta property="article:tag" content="搬运自旧博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-数论test" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      数论test
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%95%B0%E8%AE%BAtest/" class="article-date">
+	  <time datetime="2021-09-05T02:20:18.585Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="有趣的序列"><a href="#有趣的序列" class="headerlink" title="有趣的序列"></a><font color =darkblue>有趣的序列</font></h2><p><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/P3200"><font size =5>洛谷链接</font></a><br>这一道题是一道卡特兰数的题，但是因为数据量以及要进行模运算的原因，要采用我先前博客中写到的通项式。当然因为不可以直接算阶乘，因此采取分解阶乘的方法转换成乘法。</p>
+<blockquote>
+<p><font color =green >Code</font></p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 1000002</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Int64 long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> primes[<span class="number">2</span>*maxn];</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">2</span>*maxn];</span><br><span class="line"><span class="keyword">bool</span> isp[<span class="number">2</span>*maxn];</span><br><span class="line"><span class="keyword">int</span> newp=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Eular_Sieve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;<span class="number">2</span>*maxn;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!isp[i])&#123;</span><br><span class="line">			primes[++newp]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=newp&amp;&amp;primes[j]*i&lt;<span class="number">2</span>*maxn;j++)&#123;</span><br><span class="line">			isp[primes[j]*i]=<span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">if</span>(!(i%primes[j]))<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Int64 <span class="title">qkpow</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">	<span class="comment">//a的b次方mod p </span></span><br><span class="line">	<span class="keyword">if</span>(b==<span class="number">1</span>)<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">if</span>(b%<span class="number">2</span>)&#123;</span><br><span class="line">		Int64 t=<span class="built_in">qkpow</span>(a,b/<span class="number">2</span>,p);</span><br><span class="line">		t=t*t%p;</span><br><span class="line">		t=t*a%p;</span><br><span class="line">		<span class="keyword">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		Int64 t=<span class="built_in">qkpow</span>(a,b/<span class="number">2</span>,p);</span><br><span class="line">		t=t*t%p;</span><br><span class="line">		<span class="keyword">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n,p;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;p);</span><br><span class="line">	<span class="built_in">Eular_Sieve</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=newp;i++)&#123;</span><br><span class="line">		Int64 t=primes[i];</span><br><span class="line">		Int64 cnt1=<span class="number">0</span>,cnt2=<span class="number">0</span>,cnt3=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(t&lt;=<span class="number">2</span>*n)&#123;</span><br><span class="line">			cnt1+=(<span class="number">2</span>*n/t);cnt2+=((n+<span class="number">1</span>)/t);cnt3+=(n/t);</span><br><span class="line">			t*=primes[i];</span><br><span class="line">		&#125;</span><br><span class="line">		sum[i]=cnt1-cnt2-cnt3;</span><br><span class="line">	&#125;</span><br><span class="line">	Int64 ans=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=newp;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(sum[i])&#123;</span><br><span class="line">			(ans*=<span class="built_in">qkpow</span>(primes[i],sum[i],p))%=p;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="打气球"><a href="#打气球" class="headerlink" title="打气球"></a><font color=blue>打气球</font></h2><p>这道题我就不给网址了，yzoj上面最后一页找</p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p><font color=#3091f2 size=4><strong>Descrition</strong></font></p>
+</blockquote>
+<p>周末何老板到磁器口游玩。街边有小贩在组织一种打气球游戏，何老板很感兴趣。</p>
+<p>店家立了一块布，布上画了N*N的方格，有的方格里挂上了气球，有的没有。</p>
+<p>游戏规则如下：</p>
+<p>第1步.观察。如果每一行都至少有一个方格没有气球，并且每一列都至少有一个方格没有气球，游戏结束。否则进行第2步。</p>
+<p>第2步.抛骰子。店家拿出一个特制的骰子，该骰子有N个面，上面依次有1到N这N 个数字。玩家先后抛两次骰子，设第一次抛出的数字为x，设第二次抛出的数字为y (注：抛出的数字是随机的)。</p>
+<p>第3步.打气球。若坐标为(x,y)的格子里有气球，玩家必须将其打爆。子弹1块钱一发。</p>
+<p>如果该格子没有气球，忽略该格子，玩家不用开枪，但玩家也需要支付给店家1块钱。</p>
+<p>第4步.继续。执行第1步。 </p>
+<p>何老板是个神枪手，他能做到百发百中。他想你帮他算算，对于当前给出的这局游戏，预计要花多少钱才能结束。</p>
+<blockquote>
+<p><font color=#3091f2 size=4><strong>Input</strong></font></p>
+</blockquote>
+<p>第一行，两个整数N和M，N表示方格的尺寸,M表示游戏开始时，有M个格子里是没有气球的。 接下来M行，每行两个整数x,y,表示坐标为x,y的格子里没有气球。</p>
+<blockquote>
+<p><font color=#3091f2 size=4><strong>Output</strong></font></p>
+</blockquote>
+<p>一行，一个实数，完成游戏预计花费，保留2个小数位。</p>
+<blockquote>
+<p><font color=#3091f2 size=4><strong>Sample Input</strong></font></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5 2 </span><br><span class="line">2 3 </span><br><span class="line">4 1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><font color=#3091f2 size=4><strong>Sample Output</strong></font></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11.77</span><br></pre></td></tr></table></figure>
+
+<p>如果你想看更多的样例输出，可以去<a target="_blank" rel="noopener" href="https://wuyanxi.top/2019/02/15/20190201-%E6%95%B0%E8%AE%BA%E9%98%B6%E6%AE%B5%E8%80%83%E8%AF%95%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">WYX大佬的博客</a></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a><font color= DarkMagenta>分析</font></h3><p>这一道题啊，实际上啊，就是一道期望的题，如果你点开了上面的那一个链接，多半也看见了YB说的话了吧，那么接下来要做的事情就是找出递归的关系<br>首先，我们都知道每一个格子概率为$\frac{1}{n^2}$<br>我们设有$r$行已经打掉，$c$列已经打掉，函数为$f[r][c]=……$<br>那么分类讨论<br>1.如果说没有抽到有气球的地方，那么就是他自己乘上没有气球的地方的概率<br>2.如果说打掉的地方只能消除行，那么就是乘上$f[r-1][c]$以及这些地方的概率，只能消除列同理<br>3.如果可以同时消去的话，那么就可以类比上面的，写出式子来。<br>4.当然最后你应该加上1，因为每打一次收费1</p>
+<p>式子和化简如下<br>$$<br>f[r][c]=\\ \frac{f[r-1][c]\times r(n-c)+f[r][c-1]\times c(n-r)+f[r-1][c-1]\times r\times c+f[r][c]\times(n-r)(n-c)+n^2}{n^2(n-r)(n-c)}<br>$$<br>好了，既然已经知道了式子，那么就可以比较容易的做出来了，至于边界，那你也可以自己推出来，你可以选择两种方法，$dfs$ or$ dp$<br>我的代码里面把$dfs$的注释掉了</p>
+<blockquote>
+<p><font color =green >Code</font></p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 2003</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">double</span> f[maxn][maxn];</span><br><span class="line"><span class="keyword">bool</span> row[maxn],col[maxn];<span class="comment">//行 列 </span></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> r,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(!r&amp;&amp;!c)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(f[r][c]!=<span class="number">-1</span>)<span class="keyword">return</span> f[r][c];</span><br><span class="line">	<span class="keyword">if</span>(r)ans+=<span class="built_in">dfs</span>(r<span class="number">-1</span>,c)*r*(n-c);</span><br><span class="line">	<span class="keyword">if</span>(c)ans+=<span class="built_in">dfs</span>(r,c<span class="number">-1</span>)*c*(n-r);</span><br><span class="line">	<span class="keyword">if</span>(r&amp;&amp;c)ans+=<span class="built_in">dfs</span>(r<span class="number">-1</span>,c<span class="number">-1</span>)*r*c;</span><br><span class="line">	<span class="keyword">return</span> f[r][c]=(<span class="keyword">double</span>)(ans+n*n)/(n*(c+r)-c*r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">int</span> r=n,c=n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> x,y;</span><br><span class="line">		cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">		<span class="keyword">if</span>(!row[x])r--,row[x]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(!col[y])c--,col[y]=<span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*for(int i=0;i&lt;=r;i++)&#123;</span></span><br><span class="line"><span class="comment">		for(int j=0;j&lt;=c;j++)f[i][j]=-1;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	dfs(r,c);*/</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		f[i][<span class="number">0</span>]=f[i<span class="number">-1</span>][<span class="number">0</span>]+n/(i+<span class="number">0.0</span>);</span><br><span class="line">		f[<span class="number">0</span>][i]=f[<span class="number">0</span>][i<span class="number">-1</span>]+n/(i+<span class="number">0.0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=r;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=c;j++)&#123;</span><br><span class="line">			<span class="keyword">double</span> tmp=f[i<span class="number">-1</span>][j]*i*(n-j)+f[i][j<span class="number">-1</span>]*(n-i)*j+f[i<span class="number">-1</span>][j<span class="number">-1</span>]*i*j+n*n;</span><br><span class="line">			f[i][j]=tmp/(n*(i+j)-i*j);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>,f[r][c]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有一道题，不过比较水，居然用暴力枚举就可以做出来了，早知道我当时就直接枚举了，题目与韩信点兵类似</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Ddmiurge</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2021/09/05/数论test/" target="_blank" title="数论test">http://example.com/2021/09/05/数论test/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Catalan-Number/" rel="tag">Catalan Number</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%AC%E8%BF%90%E8%87%AA%E6%97%A7%E5%8D%9A%E5%AE%A2/" rel="tag">搬运自旧博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/" rel="tag">概率期望</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/05/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          排列组合复习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/05/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%A4%E9%81%93%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数论题目两道</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E8%B6%A3%E7%9A%84%E5%BA%8F%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">有趣的序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E6%B0%94%E7%90%83"><span class="nav-number">2.</span> <span class="nav-text">打气球</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-number">2.2.</span> <span class="nav-text">分析</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Ddmiurge&#39;s blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Ddmiurge All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

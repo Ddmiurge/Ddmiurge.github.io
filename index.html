@@ -1,98 +1,2221 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   
-  <title>
-    
-    Hexo
-  </title>
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <title>Ddmiurge&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <link rel="icon" href="/favicon.ico">
   
+  
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Ddmiurge&#39;s blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Ddmiurge&#39;s blog">
+<meta property="og:locale">
+<meta property="article:author" content="Ddmiurge">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/home.css" >
+  
+
+  
+
+  
+
+  
+  
+  
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-<body>
-  <nav class="nav">
-    <div class="nav-bar">
-  <div class="title">
-    <a href="/." title="Hexo">Hexo</a>
-  </div>
-  <div class="menu-controller">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
 
-<div class="menu">
-  
-  <li>
-    <a href="/" title="Home">Home</a>
-  </li>
-  
-  <li>
-    <a href="/archives" title="Archive">Archive</a>
-  </li>
-  
-  <li>
-    <a href="/tags" title="Tags">Tags</a>
-  </li>
-  
-</div>
-  </nav>
-  <main>
-    <div class="layout">
-      <div class="post-list">
-  
-  <article class="post">
-    <h2 class="title">
-      <a href="/2021/09/02/hello-world/" title="Hello World">Hello World</a>
-    </h2>
 
-    <div class="info">
-      <span class="date">2021-09-02</span>
+
+  <body>
+
+
+  
+    <header id="header">
+
+	<!-- 背景图模式 -->
+	
+
+    
+      <div id="intrologo" class="intro-logo">
+    
+ 
+
+
+    <canvas width="100%" height="100%"></canvas>
+    <script>
+      var c = document.getElementsByTagName('canvas')[0],
+          x = c.getContext('2d'),
+          w = window.innerWidth,
+          h = window.innerHeight,
+          pr = window.devicePixelRatio || 1,
+          f = 90,
+          q,
+          m = Math,
+          r = 0,
+          u = m.PI*2,
+          v = m.cos,
+          z = m.random
+      c.width = w*pr
+      c.height = h*pr
+      x.scale(pr, pr)
+      x.globalAlpha = 0.6
+
+      <!-- 折线Polyline背景 -->
+      
+        function i(){
+            x.clearRect(0,0,w,h)
+            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
+            while(q[1].x<w+f) d(q[0], q[1])
+        }
+        function d(i,j){   
+            x.beginPath()
+            x.moveTo(i.x, i.y)
+            x.lineTo(j.x, j.y)
+            var k = j.x + (z()*2-0.25)*f,
+                n = y(j.y)
+            x.lineTo(k, n)
+            x.closePath()
+            r-=u/-50
+            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
+            x.fill()
+            q[0] = q[1]
+            q[1] = {x:k,y:n}
+        }
+        function y(p){
+            var t = p + (z()*2-1.1)*f
+            return (t>h||t<0) ? y(p) : t
+        }
+        document.getElementById("intrologo").onclick = i
+        document.getElementById("intrologo").ontouchstart = i
+        i()
+
+      <!-- 多边形trianglify背景 -->
+      
+    </script>
+    
+
+    
+      <div id="homelogo" class="homelogo"> 
+    
+
+        
+          <div class="homelogoback" >
+            <h1><a href="#content" id="logo">Ddmiurge&#39;s blog</a></h1>
+            <h3></h3>
+            <h5>Ddmiurge</h5>
+            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
+          </div>
+        
+    
     </div>
+  </div>
 
-    <div class="content">
+  <!-- 自适应主页背景大图 -->
+  
+
+ <!-- home_logo_image居中 -->
+ 
+    <script>
+        var homelogodiv = document.getElementById("homelogo");
+        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
+          homelogodiv.style.width = document.body.clientWidth + "px";
+          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+        } else {
+          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
+          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+        }
+    </script>
+  
+
+  <div class="intro-navigate">
+      <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/about">About</a>
+        
+      </p>
+  </div>
+
+</header>
+  
+  <div id="container">
+    <div id="wrap">
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;">
+  
+    <article id="post-2-SAT问题"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/2-SAT%E9%97%AE%E9%A2%98/">2-SAT问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/2-SAT%E9%97%AE%E9%A2%98/" class="article-date">
+	  <time datetime="2021-09-05T02:20:23.262Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%9B%BE%E8%AE%BA/">图论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+2-SAT问题描述有n个组，第i个组里有两个节点$A_i, A_i’$ 。需要从每个组中选出一个。而某些点不可以同时选出（称之为不相容）。任务是保证选出的n个点都能两两相容。这类型的问题我们称之为2-SAT问题
+问题引入Question
+某国有N个党派，每个党派里面有且只有两个代表（编号连续），要求从中选一个代表出来组成和平委员会，且如果两个代表不和，则他们不能同时属于委员会
+
+Sample Input1233 21 32 4
+
+Sample Output1231 45
+
+Analy...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/2-SAT%E9%97%AE%E9%A2%98/#more">Read More</a>
+        </p>
       
     </div>
+    <footer class="article-footer">
+      
+      
+      
+      
 
-    <a href="/2021/09/02/hello-world/" title="Read more.." class="read-more">Read more..</a>
-  </article>
+    </footer>
+  </div>
   
-</div>
-<div class="paginate">
-  <span class="page-number current">1</span>
-</div>
-    </div>
-  </main>
-  <footer class="footer">
-    <div class="layout">
-      <div class="copy">
-  <p>
-    Powered by <a target="_blank" rel="noopener" href="https://hexo.io/" title="Hexo">Hexo</a> |
-    Theme - <a target="_blank" rel="noopener" href="https://github.com/mintsweet/hexo-theme-cold" title="Cold">Cold</a>
-  </p>
-  <p>
-    
-    &copy;
-    
-    2017 -
-    
-    2021
-    <span>John Doe</span>
-  </p>
-</div>
-    </div>
-  </footer>
-</body>
+</article>
 
-<script src="/js/main.js"></script>
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20190709"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/20190709/">20190709 test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/20190709/" class="article-date">
+	  <time datetime="2021-09-05T02:20:23.192Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/test/">test</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          T1Desctription
+一队勇士正在向你进攻，每名勇士都有一个战斗值$a_i$。但是这队勇士却有一个致命弱点，如果存在$i$&lt;$j$&lt;$k$使得$a_i$&gt;$a_j$&gt;$a_k$，则会影响他们整体的战斗力。我们将这样的一组(i,j,k)称为这队勇士的一个弱点。请求出这队勇士的弱点数目。
+
+Input
+输入文件：$weakness.in$
+输入的第一行是一个整数n，表示勇士的数目。
+接下来一行包括n个整数，表示每个勇士的战斗值$a_i$
+
+Output
+输入文件...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/20190709/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20190710test"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/20190710test/">20190710 test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/20190710test/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.933Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/test/">test</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          20190710的testT1Desctription
+传说，数千年前圣帕特里克消灭了哞尔兰所有的蛇。然而，蛇们现在卷土重来了！圣帕特里克节是在每年的3月17日，所以小明要用彻底清除哞尔兰所有的蛇来纪念圣帕特里克。小明装备了一个捕网，用来捕捉N组排成一行的蛇（1≤N≤400）。小明必须按照这些组在这一行中出现的顺序捕捉每一组的所有蛇。每当小明抓完一组蛇之后，她就会将蛇放在笼子里，然后带着空的捕网开始捕捉下一组。
+一个大小为s的捕网意味着小明可以抓住任意包含g条的一组蛇，其中g≤s。然而，每...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/20190710test/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20190712test"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/20190712test/">20190712的test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/20190712test/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.776Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/test/">test</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          ##T1
+Description
+N个布丁摆成一行,进行M次操作.每次将某个颜色的布丁全部变成另一种颜色的,然后再询问当前一共有多少段颜色.例如颜色分别为1,2,2,1的四个布丁一共有3段颜色.
+
+Input
+第一行给出N,M表示布丁的个数和好友的操作次数. 第二行N个数$A_1$,$A_2$…$A_n$表示第i个布丁的颜色从第三行起有M行,对于每个操作,若第一个数字是1表示要对颜色进行改变，其后的两个整数X,Y表示将所有颜色为X的变为Y，X可能等于Y. 若第一个数字为2表示要进行询问当前...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/20190712test/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20190723"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/20190723/">20190723的test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/20190723/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.666Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/test/">test</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          TrafficDescription​    工人打算用一组传感器测量公路上的车流量，每个传感器被用来测量一小段路面上的车流量的数值。不幸的是，某一天装有传感器的盒子进了水，之后它们就不能精确的测量了。现在每个传感器只能输出一个可能结果的范围。例如，一个传感器可能会给出范围[7,13]，表示在这段路面上的车流量不小于7，并且不大于13。
+​    高速路要测量的这一段长N英里，当然高速路都是单向的，从第1英里驶向第N英里。工人想要安装N个传感器——每个监测1英里长的路段。在其中某些路段上，...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/20190723/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20190820test"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/20190820test/">20190820test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/20190820test/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.627Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/test/">test</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          AgentDesciption
+IMF(不可能任务小组)有N个Agent，每个Agent的能力值互不相同，现在部长先生想要派出A,B两队Agent去参加特别任务。但是参加大战的两个队伍要满足两个要求：
+1. A队中能力最大的Agent的能力值要小于B队能力最弱的Agent的能力值。
+2. A,B两队都要有人参加。
+并不是所有的Agent都要去参加的，心急的部长先生想知道有多少种安排Agent的方案。由于答案可能很大，所以只需要你求出答案模的值就可以了。
+
+Input输入仅一行，为一个整数N...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/20190820test/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20190920"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/20190920/">20190920周记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/20190920/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.350Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%91%A8%E8%AE%B0/">周记</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Summary​    我也不知道应该说一些什么，感觉就是很普通的一周。上周父亲带着我去买了一块表，感觉还不错。这周每天晚上都是延长了晚自习，一直到十点半的时候才从学校回来。这么一周下来感觉还是有一些累，回来锻炼，洗漱之后都是已经很晚了，然后早上再起来也是感觉有一些疲倦。至于各个学科，数学到时还不错,题目坐下来到时勉强算得上是顺手，物理化学也是还好。至于地理，感觉有的时候看到五三这些还是觉得不明所以，唉。
+​    英语倒是感觉背单词的效率不是很高，没有找出足够多的时间来背，感觉一周七个$...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/20190920/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20191022考试总结"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/20191022%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/">20191022考试总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/20191022%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.253Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/test/">test</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          XorarrayDescription
+xor——异或，和 and 与or 一样，是一种重要的逻辑运算，他的运算规律是 0 xor 0 = 0，1 xor 1 = 0，1 xor 0 = 1，0 xor 1 = 1
+两个整数之间的异或是将两个整数转化成二进制，对他们的每一位分别进行 xor 操作，例：6(110) xor 13(1101) = 11(1011)
+现在我们要介绍一种新的操作——数组异或，将两个相同大小（假设都为n）的数组A、B异或成一个新数组C，则新数组必满足:$$C[k]=...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/20191022%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-K-D tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/K-D%20tree/">K-D tree入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/K-D%20tree/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.239Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          KNN问题​    K-Nearest Neighbor，我也不知道应该说是问题还是算法，也就不要管这个了。我们想象这样一个场景，在一个平面直角坐标系上面，有很多很多个点。现在我们随机地选择一个点，想要知道离他最近的$k$个点是哪些，怎么办。如果使用肉眼观察的话，那么我们是可以大致判断出来有哪些的。可是在很多时候，我们拿到的并不是图像，而是数据，而这些数据要让计算机来处理，怎么办？？
+​    对于这一个问题，我们可以用时间复杂度为$\Theta(n^2)$的方法，处理出所有的距离，询问到...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/K-D%20tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-LG1005"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/LG1005/">LuoguP1005</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/LG1005/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.189Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/LG%E8%AE%AD%E7%BB%83%E9%A2%98/">LG训练题</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          LG1005十年以前，提高组的题目居然要写高精度！！！！
+这不是摆明了刁难人吗！！！！！！！
+Analysis你需要写的高精度：
+
+高精度加法
+高精度比较大小
+高精度乘高精度
+高精度乘低精度
+高精度赋初值
+
+虽然这一道题目是一道$dp$，但是高精度完全抢走了所有的风头
+关于着一道题目的$dp$，首先，就是在于每一行都是独立的，互相影响，所以说每一行单独来$dp$就可以了。
+我们设$f[i][j]$来表示$[i,j]$区间里面的最优情况，他可能是是从$[i+1,j]$和$[i,j-1]$两种...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/LG1005/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-LGP1373"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/LGP1373/">LuoguP1373</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/LGP1373/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.881Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/LG%E8%AE%AD%E7%BB%83%E9%A2%98/">LG训练题</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          LGP1373Analysis这一道题目，首先，因为是交替进行，所以要有一维来表示是两个人中的哪一个，其次，这是一个矩阵，还要有矩阵的位置，最后，因为只有双方的魔液数量相同的时候才可以活下来，所以说应该还有一维来记录双方魔液的差值。对于状态转移方程，先做出如下约定：
+
+1-&gt;小A, 0-&gt;uim
+差值为：小A的魔液减去uim的魔液
+
+对于小A:$$f[i][j][k][1]+=f[i-1][j][(k-mat[i][j]+md)\mod md][0]\\f[i][j][k][1...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/LGP1373/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-LGP4377"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/LGP4377/">LuoguP4377</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/LGP4377/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.841Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%B4%9B%E8%B0%B7%E7%BB%83%E4%B9%A0%E9%A2%98/">洛谷练习题</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          LGP4377Analysis今天考试，$Mr.Yu$疯狂暗示，难道不是递增的哦
+所以说我一来就开始看第三题，显示贪心错了大样例，然后就决定$dp$了，想不到居然对了，开心。
+后面到网上来看题解，全部都是0/1分数规划，我震惊了，嗯，想不到啊。
+这里来谈一谈我的做法，设$f[i]$表示才艺之的总之为$i$的时候最小的重量是多少，之所以要这么来设计是因为才艺值是固定的，重量值越小的时候，才艺值就越大，然后每一头奶牛只能够选一次，那么不就是一个0/1背包的模板题，最后来扫一遍得到答案吗
+Cod...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/LGP4377/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Polya定理和母函数"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/Polya%E5%AE%9A%E7%90%86%E5%92%8C%E6%AF%8D%E5%87%BD%E6%95%B0/">Polya定理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/Polya%E5%AE%9A%E7%90%86%E5%92%8C%E6%AF%8D%E5%87%BD%E6%95%B0/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.823Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          群论今天学习了一点很厉害的知识，我简要记录一下，方便日后再来复习，不过并不是十分地详尽。在了解什么是$Polya$定理之前，先让我们来看一看什么是群。这个知识可以是为后面奠基的。
+定义群是一个集合，它满足运算$*$，这个运算是经过定义的，可以是加法，可以是乘法，也可以是其它的运算法则。作为一个群，它具有以下的性质:
+
+封闭性:$\forall a,b\in G,\exists c\in G,a*b=c$
+
+结合律: $\forall a,b,c\in G,(ab)c=a(bc)$
+
+单位元...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/Polya%E5%AE%9A%E7%90%86%E5%92%8C%E6%AF%8D%E5%87%BD%E6%95%B0/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-博弈论入门"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8/">博弈论入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.804Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          博弈论（Game Theory）首先先说两个定义N状态:前面的一个玩家必胜P状态: 后面一个玩家必胜
+巴什博弈 （Bush Game）有一堆数量为n的物体，轮流拿，至少拿1个，至多拿k个(N&gt;K);如果n%（k+1）==0，那么先手必败。这一切是显而易见，毫无疑问的
+
+一道例题Tang and Jiang are good friends. To decide whose treat it is for dinner, they are playing a game. Specifi...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-递推复习 (1)"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E9%80%92%E6%8E%A8%E5%A4%8D%E4%B9%A0%20(1)/">dp review (1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E9%80%92%E6%8E%A8%E5%A4%8D%E4%B9%A0%20(1)/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.442Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">基础算法</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          实际上我只是贴我做的题而已不仅如此，我还是一两道题就给一篇博客
+骨牌问题(yzoj1366)Description
+　有 2 行 N 列的长方形，可以用 N 个 1*2 的骨牌铺满，但可能有很多种不同的铺法。现在给出自然数n，请回答当长方形为 2 行 n 列时，有多少种不同的铺设方法。
+
+Input
+第一行一个整数t表示测试数据组数。下面的t行，每行一个整数n。
+
+Output
+每组数据输出一行一个整数，表示方案总数，这个数可能很大，所以只需输出模10007后的结果。
+
+
+
+
+Sample...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E9%80%92%E6%8E%A8%E5%A4%8D%E4%B9%A0%20(1)/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-二分图"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图匹配</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E4%BA%8C%E5%88%86%E5%9B%BE/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.395Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%9B%BE%E8%AE%BA/">图论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+二分图的匹配二分图的最大匹配增广路一条匹配边与非匹配边交替出现的路径叫做增广路
+匹配边：两个点已经处于已选集合里面的边
+非匹配边：这条边有个点不属于已经选过的集合里面的边
+匈牙利算法在二分图里面交替找增广路的算法，然后把增广路取反直到不存在增广路为止
+1234567891011121314151617181920bool dfs(int u)&#123;    for(int i=head[u];i;i=nxt[i])&#123;        int v=to[i];        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E4%BA%8C%E5%88%86%E5%9B%BE/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-概率期望"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/">概率和期望入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.380Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          概率与期望期望概率这一个词语在生活中实际上是经常会碰见的，所以说这里我就来说一说相对而言遇到的要少一些的期望。这个期望啊，可以理解为某些事件大量发生以后的平均的结果。这就好比一个六面的色子扔了很多很多次以后，色子平均值会趋近于3.5。这个原因啊，是显而易见，毫无疑问的，就不需要再多解释了。
+例题好的，有一道例题可以看看洛谷P4316这一道题啊，读完了我就想到了拓扑排序，，同时用两个变长数组来存就可以了最开始我想用边集，可是我不知道怎么用边集来拓扑排序啊，于是ZhuFN大佬提醒我用两个变长数...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-高精度压位"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8E%8B%E4%BD%8D/">高精度压位</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8E%8B%E4%BD%8D/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.066Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/">基础算法</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          压位的原因正常的高精度计算中，每一位只存了一位数字，可是当面对比较大的计算的时候呢，如果说每一位都只存一位数字，那么计算的时间就会比较地长。这个时候可以通过每一位高精度中存储多位数字的方法来降低运算的时间
+例题引入简单的来说就是 一个高精度的开根号，只要求开到整数向下取整就可以了。数据范围是$10^{1000}$;首先就是开高精度根号的方法，很容易想到的方法就是二分或者是手动开根号。我这里使用的是二分的方法。这一道题最开始我是直接高精度来的,然后TLE了，接着我压了四位，还是TLE了，然后...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8E%8B%E4%BD%8D/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-关于质数和约数的总结"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E5%85%B3%E4%BA%8E%E8%B4%A8%E6%95%B0%E5%92%8C%E7%BA%A6%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/">关于质数和约数的一个小总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E5%85%B3%E4%BA%8E%E8%B4%A8%E6%95%B0%E5%92%8C%E7%BA%A6%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.030Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          约数定义​    若整数n能够整除d，则d是n的约数，n是d的倍数，记作d|n
+基本性质
+唯一分解定理：任何一个正整数都可以分解为$p_1^{b_1}*p_2^{b_2}*p_3^{b_3}……p_n^{b_n}$（为了后面的叙述，若$i&lt;j,p_i&lt;p_j$）
+它的正约数个数：$\prod_{i=1}^{m}(b_i+1)$
+$lcm(a,b)gcd(a,b)=ab$
+
+基本算法和板子
+试除法： 用来求解一个数的正约数集合，时间复杂度：$\Theta(\sqrt n)$
+更相...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E5%85%B3%E4%BA%8E%E8%B4%A8%E6%95%B0%E5%92%8C%E7%BA%A6%E6%95%B0%E7%9A%84%E6%80%BB%E7%BB%93/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-矩阵"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E7%9F%A9%E9%98%B5/">矩阵</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E7%9F%A9%E9%98%B5/" class="article-date">
+	  <time datetime="2021-09-05T02:20:20.988Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+用矩阵来祭我的第一篇博客感谢朱枫苓，WYX大佬为本人博客的建设做出的巨大贡献再次特别发出大佬博客的地址，表示我对与朱枫苓大佬的敬佩大佬自己的博客大佬在博客园的博客
+好了，来看看矩阵
+
+加法。只有同型的矩阵才可以相加，对应的位置上面相加就可以了。
+数乘。把一个矩阵拿来和一个常数相乘，每一位都乘上来就行了，没有什么多的了。
+倒置。直接行列倒过来就行了。还有一个定理：A*B的倒置等于A的倒置乘以B的倒置
+
+然后就到了重点了
+乘法矩阵乘法$A*B$ 可以做乘法的条件是A的列数要等于B的行数 ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E7%9F%A9%E9%98%B5/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-卡特兰数"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/">Catalan Number入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="article-date">
+	  <time datetime="2021-09-05T02:20:20.864Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          定义这个cn啊，是组合数学里面经常会用到的东西，比如说：
+
+让你算算二叉树的形态
+又让你算算合法的括号序列
+又或者让你算算出入栈的合法顺序
+还可能让你去说说把多边形割成三角形方法
+
+综上所述就是18年初赛的第8题
+于是有的人弄出来了它的式子我们设为f(n),那么有$$f(n)=\sum^{n-1}{i=0}f(i)\cdot f(n-i-1)$$当然人们并不会满足一个式子，于是就有了第二个$$f(n)=f(n-1)\cdot \frac{4n-2}{n+1}$$但是因为我们没有通项式，所以...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-康托展开"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/">康托展开</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/" class="article-date">
+	  <time datetime="2021-09-05T02:20:20.435Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          按规矩，祭天 
+今天加了的内容是康托展开，因为时间原因就不附上题目了而且我也还没有做题，就直接来看内容了
+定义它是用来求解一个数列的全排列下面的结果的序号的问题$$∑(pi*(n-i)!)(i是第几个数字)$$
+逆推那么就是根据序号求结果了，方法是类似的首先是把1~n-1的阶乘都算出来，然后呢每一位也是倒着回去，用序号整除这里对应的阶乘，然后看看在剩下的没有选的数字当中哪一个的比它小的数字的个数等于这一个结果就行了
+比较简洁，大概就是我对此的理解了
+最后还有一个逆元的求法这个求法的推导自己...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-洛谷P2421"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%B4%9B%E8%B0%B7P2421/">洛谷P2421题解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%B4%9B%E8%B0%B7P2421/" class="article-date">
+	  <time datetime="2021-09-05T02:20:20.416Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          洛谷P2421这一道题目是一道同余的题目，进行推理后用扩展欧几里得就可以了，解析我写在了代码里面
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include&lt;bits/stdc++.h&gt;#define Int64 long long#define maxn 17using namespace std;Int6...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E6%B4%9B%E8%B0%B7P2421/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-洛谷P3807卢卡斯定理"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%B4%9B%E8%B0%B7P3807%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86/">洛谷P3807卢卡斯定理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%B4%9B%E8%B0%B7P3807%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86/" class="article-date">
+	  <time datetime="2021-09-05T02:20:20.209Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          这是一道模板题
+这里是题目 洛谷P3807卢卡斯定理及题目的阐释卢卡斯定理是用来解决一大很大的组合数来和一个质数求余的问题，它的定义如下如果$p$为素数，设$n=sp+q$,$m=tp+r$则:$$C^{sp+q}_{tp+r}\equiv C^s_t*C^q_r(mod\ p)$$
+那么来看看题。首先看这个数据范围，就知道可以用int的类型解决个屁，就是int害的我错了好多次long long 的数据类型解决，这个数据看起来好像是只有 10的5次方,但是中间这么多的计算，突然的就给我溢出...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E6%B4%9B%E8%B0%B7P3807%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-尼采经典语句收藏"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E5%B0%BC%E9%87%87%E7%BB%8F%E5%85%B8%E8%AF%AD%E5%8F%A5%E6%94%B6%E8%97%8F/">尼采经典语句</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E5%B0%BC%E9%87%87%E7%BB%8F%E5%85%B8%E8%AF%AD%E5%8F%A5%E6%94%B6%E8%97%8F/" class="article-date">
+	  <time datetime="2021-09-05T02:20:19.618Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">阅读笔记</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          本篇文章的评注带有大量博主本人的主观臆测和断章取义，请谨慎阅读1.
+
+我想要再一次给予和分发，直到人群中的智者再一次为他们的愚蠢，穷人再一次为自己的财富而感到高兴。
+
+Analysis
+​    出自《查拉图斯特拉的序白》的开头部分，这里结合前面的内容来看，尼采想要表达的就是他自己要向太阳一样奉献，似乎也是在告诫人们要认识到自己的不足，同时也应该要学会知足？？
+2.
+
+被妒忌之火围绕的人，终究会像蝎子一样，将毒刺蛰向自己。
+
+Analysis
+ 出自《论欢乐和激情》。考虑到这一本书的名字的...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E5%B0%BC%E9%87%87%E7%BB%8F%E5%85%B8%E8%AF%AD%E5%8F%A5%E6%94%B6%E8%97%8F/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-你往何处去-读后感"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E4%BD%A0%E5%BE%80%E4%BD%95%E5%A4%84%E5%8E%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/">你往何处去-读后感</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E4%BD%A0%E5%BE%80%E4%BD%95%E5%A4%84%E5%8E%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/" class="article-date">
+	  <time datetime="2021-09-05T02:20:19.585Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">阅读笔记</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          关于显克维奇​    亨里克显克维奇，出生于十九世纪中叶的一个没落的地主家庭。中学毕业后进入了华沙高等学院进行学习。是波兰十九世纪的著名作家。人们评价他：
+
+作品人物个性鲜明，情节引人入胜，语言优美流畅，深受群众欢迎，素有“波兰语言大师”之称。
+
+​    他是最早被介绍到中国的波兰作家。鲁迅曾经翻译过他的短篇小说集。他的作品以炙热的爱国热情，波澜壮阔的战争场面，精致细腻的描写而令人赞叹。
+​    显克维奇是一个波兰人，这是一个对于大多数人而言，十分陌生的国家，大多数对他的印象，应该就是...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E4%BD%A0%E5%BE%80%E4%BD%95%E5%A4%84%E5%8E%BB-%E8%AF%BB%E5%90%8E%E6%84%9F/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-排列组合复习"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%A4%8D%E4%B9%A0/">排列组合复习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%A4%8D%E4%B9%A0/" class="article-date">
+	  <time datetime="2021-09-05T02:20:18.890Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%A4%8D%E4%B9%A0/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-数论test"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%95%B0%E8%AE%BAtest/">数论test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%95%B0%E8%AE%BAtest/" class="article-date">
+	  <time datetime="2021-09-05T02:20:18.585Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          有趣的序列洛谷链接这一道题是一道卡特兰数的题，但是因为数据量以及要进行模运算的原因，要采用我先前博客中写到的通项式。当然因为不可以直接算阶乘，因此采取分解阶乘的方法转换成乘法。
+
+Code
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;bits/stdc++.h&gt;#define maxn ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E6%95%B0%E8%AE%BAtest/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-数论的两道题"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%A4%E9%81%93%E9%A2%98/">数论题目两道</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%A4%E9%81%93%E9%A2%98/" class="article-date">
+	  <time datetime="2021-09-05T02:20:17.380Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          错位排列这是一道水题，名字就直接告诉了题的内容和做题的方法，那么直接使用公式就可以了
+12345678910111213141516171819202122232425262728//错排问题//就是不可以放在自己原来的位置上 //那么直接根据公式来就可以了//D=n!*(1-1/1!+1/2!+...) #include&lt;bits/stdc++.h&gt;using namespace std;long long fact[15];inline void init()&#123;	...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%A4%E9%81%93%E9%A2%98/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-数论的一些板子"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9D%BF%E5%AD%90/">数论的板子</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9D%BF%E5%AD%90/" class="article-date">
+	  <time datetime="2021-09-05T02:20:17.371Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          辗转相除法原始版本123inline int gcd(x,y)&#123;  return (y==0)?x:gcd(y,x%y);  &#125; 
+
+
+
+高级版本1234567891011inline void gcd(int x,int y)&#123;	int i,j;    if(!x)return y;if(!y)return x;    for(i=0;!(x&amp;1);i++)x&gt;&gt;=1;    for(j=0;!(j&amp;1);j++)j&gt;&gt...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E6%95%B0%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9D%BF%E5%AD%90/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-同余总结"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E5%90%8C%E4%BD%99%E6%80%BB%E7%BB%93/">同余总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E5%90%8C%E4%BD%99%E6%80%BB%E7%BB%93/" class="article-date">
+	  <time datetime="2021-09-05T02:20:17.351Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+同余定义若对于$a,b$两个整数，除以$m$的余数相等，则称$a$,$b$模$m$同余，记作$a\equiv b(mod\ m)$
+基本定理和性质
+逆元：若$a*x\equiv 1(mod\ p)$,$a$,$b$互质,则称x是a的逆元，记为$a^{-1}$
+欧拉定理：若$a$,$m$互质，则$a^{\phi(m)}\equiv 1(mod \ m)$
+扩展欧拉定理： $a^b\equiv a^{b\ mod\ \phi(m)+\phi(m)}(mod\ m)$
+贝祖定理：对于任意的整...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E5%90%8C%E4%BD%99%E6%80%BB%E7%BB%93/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-质数复习"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E8%B4%A8%E6%95%B0%E5%A4%8D%E4%B9%A0/">对于质数知识的复习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E8%B4%A8%E6%95%B0%E5%A4%8D%E4%B9%A0/" class="article-date">
+	  <time datetime="2021-09-05T02:20:17.339Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+Problem List洛谷4161
+洛谷2926
+洛谷4397
+
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/09/05/%E8%B4%A8%E6%95%B0%E5%A4%8D%E4%B9%A0/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+
+
+</section>
+        
+      </div>
+      
+        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+  
+<script src="/js/home.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Ddmiurge&#39;s blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Ddmiurge All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+</body>
+</html>

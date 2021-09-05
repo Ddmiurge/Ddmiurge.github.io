@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>luogup1005 | Ddmiurge&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="高精度区间dp" />
+  
+  
+  
+  
+  <meta name="description" content="LuoguP1005题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LuoguP1005">
+<meta property="og:url" content="http://example.com/2021/09/05/LG1005/index.html">
+<meta property="og:site_name" content="Ddmiurge&#39;s blog">
+<meta property="og:description" content="LuoguP1005题解">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-05T02:20:22.189Z">
+<meta property="article:modified_time" content="2021-09-05T02:20:22.756Z">
+<meta property="article:author" content="Ddmiurge">
+<meta property="article:tag" content="高精度">
+<meta property="article:tag" content="区间dp">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-LG1005" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      LuoguP1005
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/LG1005/" class="article-date">
+	  <time datetime="2021-09-05T02:20:22.189Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/LG%E8%AE%AD%E7%BB%83%E9%A2%98/">LG训练题</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LG1005"><a href="#LG1005" class="headerlink" title="LG1005"></a><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/P1005">LG1005</a></h1><p>十年以前，提高组的题目居然要写高精度！！！！</p>
+<p>这不是摆明了刁难人吗！！！！！！！</p>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a><font color=darkmagenta><em>Analysis</em></font></h2><p>你需要写的高精度：</p>
+<ul>
+<li>高精度加法</li>
+<li>高精度比较大小</li>
+<li>高精度乘高精度</li>
+<li>高精度乘低精度</li>
+<li>高精度赋初值</li>
+</ul>
+<p>虽然这一道题目是一道$dp$，但是高精度完全抢走了所有的风头</p>
+<p>关于着一道题目的$dp$，首先，就是在于每一行都是独立的，互相影响，所以说每一行单独来$dp$就可以了。</p>
+<p>我们设$f[i][j]$来表示$[i,j]$区间里面的最优情况，他可能是是从$[i+1,j]$和$[i,j-1]$两种情况推过来的，所以说因此就可以得出他的方程了</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a><font color=darkmagenta><em>Code</em></font></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 85</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> carry 1000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N,M;</span><br><span class="line"><span class="keyword">int</span> matrix[maxn][maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Largenum</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> val[maxn];</span><br><span class="line">	<span class="keyword">int</span> <span class="keyword">operator</span> [](<span class="keyword">const</span> <span class="keyword">int</span> &amp;ref)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> val[ref];</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="built_in">Largenum</span>(<span class="keyword">int</span> a)&#123;</span><br><span class="line">		<span class="built_in">memset</span>(val,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(val));</span><br><span class="line">		<span class="keyword">int</span> pos=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(a)&#123;</span><br><span class="line">			val[pos]=a%carry;</span><br><span class="line">			a/=carry;</span><br><span class="line">			pos++;</span><br><span class="line">		&#125;</span><br><span class="line">		val[<span class="number">0</span>]=pos;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">Largenum</span>(<span class="keyword">void</span>)&#123;</span><br><span class="line">		<span class="built_in">memset</span>(val,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(val));</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">output</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,val[val[<span class="number">0</span>]]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=val[<span class="number">0</span>]<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%03d&quot;</span>,val[i]);</span><br><span class="line">		<span class="comment">//大家都懂的，我这里是每一位存了一个三位数 </span></span><br><span class="line">	&#125;</span><br><span class="line">	Largenum <span class="keyword">operator</span> +(<span class="keyword">const</span> Largenum &amp;obj)<span class="keyword">const</span>&#123;</span><br><span class="line">		Largenum cmp;</span><br><span class="line">		<span class="keyword">int</span> add=<span class="number">0</span>,pos=<span class="built_in">max</span>(val[<span class="number">0</span>],obj.val[<span class="number">0</span>]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=pos;i++)&#123;</span><br><span class="line">			cmp.val[i]=obj.val[i]+val[i]+add;</span><br><span class="line">			add=cmp.val[i]/carry;</span><br><span class="line">			cmp.val[i]%=carry;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(add&gt;<span class="number">0</span>)cmp.val[++pos]=add;</span><br><span class="line">		cmp.val[<span class="number">0</span>]=pos;</span><br><span class="line">		<span class="keyword">return</span> cmp;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> ==(<span class="keyword">const</span> Largenum &amp;obj)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(val[<span class="number">0</span>]!=obj[<span class="number">0</span>])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=val[<span class="number">0</span>];i++)<span class="keyword">if</span>(val[i]!=obj[i])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> Largenum &amp;obj)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(val[<span class="number">0</span>]&gt;obj[<span class="number">0</span>])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">if</span>((*<span class="keyword">this</span>)==obj)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">if</span>(val[<span class="number">0</span>]&lt;obj[<span class="number">0</span>])<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=val[<span class="number">0</span>];i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">			<span class="keyword">if</span>(val[i]&gt;obj[i])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">			<span class="keyword">if</span>(val[i]&lt;obj[i])<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125; <span class="comment">//这个是状态转移比较大小用的 </span></span><br><span class="line">	</span><br><span class="line">	Largenum <span class="keyword">operator</span> *(<span class="keyword">const</span> Largenum &amp;obj)<span class="keyword">const</span>&#123;</span><br><span class="line">		Largenum cmp;</span><br><span class="line">		<span class="keyword">int</span> pos=val[<span class="number">0</span>]+obj[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=val[<span class="number">0</span>];i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=obj[<span class="number">0</span>];j++)&#123;</span><br><span class="line">				cmp.val[i+j<span class="number">-1</span>]+=val[i]*obj[j];</span><br><span class="line">				cmp.val[i+j]+=cmp.val[i+j<span class="number">-1</span>]/carry;</span><br><span class="line">				cmp.val[i+j<span class="number">-1</span>]=cmp.val[i+j<span class="number">-1</span>]%carry;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(cmp.val[pos]==<span class="number">0</span>&amp;&amp;pos&gt;<span class="number">1</span>)pos--;</span><br><span class="line">		cmp.val[<span class="number">0</span>]=pos;</span><br><span class="line">		<span class="keyword">return</span> cmp;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	Largenum <span class="keyword">operator</span> *(<span class="keyword">const</span> <span class="keyword">int</span> &amp;obj)<span class="keyword">const</span>&#123;</span><br><span class="line">		Largenum cmp;</span><br><span class="line">		<span class="keyword">int</span> pos=val[<span class="number">0</span>];<span class="keyword">int</span> add=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=pos;i++)&#123;</span><br><span class="line">			cmp.val[i]=val[i]*obj+add;</span><br><span class="line">			add=cmp.val[i]/carry;</span><br><span class="line">			cmp.val[i]=cmp.val[i]%carry;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(add&gt;<span class="number">0</span>)&#123;</span><br><span class="line">			cmp.val[++pos]=add%carry;</span><br><span class="line">			add/=carry;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(cmp.val[pos]==<span class="number">0</span>&amp;&amp;pos&gt;<span class="number">1</span>)pos--;</span><br><span class="line">		cmp.val[<span class="number">0</span>]=pos;</span><br><span class="line">		<span class="keyword">return</span> cmp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;two[maxn],f[maxn][maxn],<span class="built_in">ans</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> M)</span></span>&#123;</span><br><span class="line">	two[<span class="number">0</span>]=<span class="built_in">Largenum</span>(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=M;i++)</span><br><span class="line">		two[i]=two[i<span class="number">-1</span>]*<span class="number">2</span>;<span class="comment">//预处理一下 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;N,&amp;M);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=M;j++)</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;matrix[i][j]);</span><br><span class="line">	<span class="comment">//f[i][j]表示选择[i,j]区间时的最大值，它从f[i+1][j]和f[i][j+1]这两步枚举过来</span></span><br><span class="line">	<span class="built_in">init</span>(M);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=N;k++)&#123;</span><br><span class="line">		<span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(f));</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">0</span>;t&lt;M;t++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i+t&lt;=M;++i)&#123;</span><br><span class="line">				<span class="keyword">int</span> j=i+t;</span><br><span class="line">				<span class="keyword">int</span> pw=M-t;</span><br><span class="line">				<span class="comment">//因为f[i][j]的定义，所以说这里是从短到长的来推的</span></span><br><span class="line">				<span class="comment">//短的时候呢，乘的那一个数也要大一点</span></span><br><span class="line">				Largenum fir=(f[i+<span class="number">1</span>][j]+two[pw]*matrix[k][i]);</span><br><span class="line">				Largenum sec=(f[i][j<span class="number">-1</span>]+two[pw]*matrix[k][j]);</span><br><span class="line">				<span class="keyword">if</span>(fir&lt;sec)f[i][j]=sec;</span><br><span class="line">				<span class="keyword">else</span> f[i][j]=fir; </span><br><span class="line">			&#125; </span><br><span class="line">			ans=ans+f[<span class="number">1</span>][M];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	ans.<span class="built_in">output</span>();	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Ddmiurge</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2021/09/05/LG1005/" target="_blank" title="LuoguP1005">http://example.com/2021/09/05/LG1005/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8C%BA%E9%97%B4dp/" rel="tag">区间dp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" rel="tag">高精度</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/05/K-D%20tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          K-D tree入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/05/LGP1373/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LuoguP1373</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LG1005"><span class="nav-number">1.</span> <span class="nav-text">LG1005</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">1.1.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.2.</span> <span class="nav-text">Code</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Ddmiurge&#39;s blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Ddmiurge All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>polya定理 | Ddmiurge&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="群论Polya定理" />
+  
+  
+  
+  
+  <meta name="description" content="今天有一位很厉害的教授过来传授知识，但是我听得并不是很懂。这个真的好难啊">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Polya定理">
+<meta property="og:url" content="http://example.com/2021/09/05/Polya%E5%AE%9A%E7%90%86%E5%92%8C%E6%AF%8D%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Ddmiurge&#39;s blog">
+<meta property="og:description" content="今天有一位很厉害的教授过来传授知识，但是我听得并不是很懂。这个真的好难啊">
+<meta property="og:locale">
+<meta property="og:image" content="https://i.loli.net/2019/07/25/5d399e9be352098161.png">
+<meta property="article:published_time" content="2021-09-05T02:20:21.823Z">
+<meta property="article:modified_time" content="2021-09-05T02:20:22.219Z">
+<meta property="article:author" content="Ddmiurge">
+<meta property="article:tag" content="群论">
+<meta property="article:tag" content="Polya定理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/25/5d399e9be352098161.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Polya定理和母函数" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Polya定理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/Polya%E5%AE%9A%E7%90%86%E5%92%8C%E6%AF%8D%E5%87%BD%E6%95%B0/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.823Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="群论"><a href="#群论" class="headerlink" title="群论"></a><font color=darkmagenta>群论</font></h2><p>今天学习了一点很厉害的知识，我简要记录一下，方便日后再来复习，不过并不是十分地详尽。在了解什么是$Polya$定理之前，先让我们来看一看什么是群。这个知识可以是为后面奠基的。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a><font color=1453ad>定义</font></h3><p>群是一个集合，它满足运算$*$，这个运算是经过定义的，可以是加法，可以是乘法，也可以是其它的运算法则。作为一个群，它具有以下的性质:</p>
+<ul>
+<li><p>封闭性:$\forall a,b\in G,\exists c\in G,a*b=c$</p>
+</li>
+<li><p>结合律: $\forall a,b,c\in G,(a<em>b)<em>c=a</em>(b</em>c)$</p>
+</li>
+<li><p>单位元: $\exists e\in G,\forall a\in G,a<em>e=e</em>a=a$</p>
+</li>
+<li><p>逆元: $\forall a\in G,\exists b\in G,a<em>b=b</em>a=e,b=a^{-1}$</p>
+</li>
+</ul>
+<p>举个例子，所有的整数就可以算作是一个群，这里的运算就是加法，我们带进去看一看，会发现所有的性质是满足的。没错就这样</p>
+<h3 id="置换"><a href="#置换" class="headerlink" title="置换"></a><font color=1453ad>置换</font></h3><p>$N$个元素$1,2,3,\cdots,N$之间的置换，然后把它换成$1,2,3,\cdots,N$的一个全排列就对了，就是这么理解的，写作：<br>$$<br>\begin{pmatrix}<br>1&amp;2&amp;3&amp;\cdots&amp;N\\<br>a_1&amp;a_2&amp;a_3&amp;\cdots&amp;a_n<br>\end{pmatrix}<br>$$<br>就是长成这个样子的了</p>
+<h3 id="置换群"><a href="#置换群" class="headerlink" title="置换群"></a><font color=1453ad>置换群</font></h3><p>这是一个元素是置换的群，它的运算是置换的连接。这个东西听起来很玄对不对，对了，这个东西听起来就是很玄的，因为它本来就是这么的玄，下面我们看一个例子来理解一下，比如下面两个群我们来运算一下：<br>$$<br>\begin{pmatrix}<br>1&amp;2&amp;3&amp;4\\<br>3&amp;1&amp;2&amp;4<br>\end{pmatrix}<br>\begin{pmatrix}<br>1&amp;2&amp;3&amp;4\\<br>4&amp;3&amp;2&amp;1<br>\end{pmatrix}=<br>\begin{pmatrix}<br>1&amp;2&amp;3&amp;4\\<br>3&amp;1&amp;2&amp;4<br>\end{pmatrix}<br>\begin{pmatrix}<br>3&amp;1&amp;2&amp;4\\<br>2&amp;4&amp;3&amp;1<br>\end{pmatrix}=<br>\begin{pmatrix}<br>1&amp;2&amp;3&amp;4\\<br>2&amp;4&amp;3&amp;1<br>\end{pmatrix}<br>$$<br>下面解释一下这个运算，首先，先把第二个置换换一换位置，这一下他的第一行顺序是不是就和第一个置换的第二行一样了？然后这个时候再来看，第一个置换里面，1置换成了3，到了第二个置换里面，3又是置换成了2，对不对？这就相当于是1置换成了2，其他的元素我们以此类推，就可以得到最后一个置换了。</p>
+<p>而这一个置换群，也是满足四个性质的，为什么？我想封闭性是显然的吧，至于其他的？我怎么可能知道？我都是不知道的了，那么我还讲什么</p>
+<h3 id="一个神奇的式子和概念"><a href="#一个神奇的式子和概念" class="headerlink" title="一个神奇的式子和概念"></a><font color =1453ad>一个神奇的式子和概念</font></h3><p>$$<br>|Z_k|*|E_k|=|G|<br>$$</p>
+<p>首先，这个并不是绝对值的意思，而是说这几个分别是有多少的个数，下面一一说明每一个的意义是什么</p>
+<ul>
+<li>$|Z_k|$:设$G$是$1,2,3,\cdots,N$的置换群，$k$是$1,2,3,\cdots,N$中的某一个元素，$G$中使$k$不变的置换，记作$Z_k$</li>
+<li>$|E_k|$:等价类。$k$在$G$作用下的轨迹，即$k$在$G$作用下，产生的所有元素集合</li>
+</ul>
+<p>证明：</p>
+<p>请自行百度，谷歌，或者必应。</p>
+<h2 id="Polya定理"><a href="#Polya定理" class="headerlink" title="Polya定理"></a><font color=darkmagenta>Polya定理</font></h2><h3 id="Burnside引理"><a href="#Burnside引理" class="headerlink" title="Burnside引理"></a><font color=1453ad>Burnside引理</font></h3><p>我们不妨假设$D(a_j)$是置换$a_j$下面不变的元素个数，那么就很容易就有一个式子<br>$$<br>\sum_{i=1}^{n}|Z_j|=\sum_{i=1}^{s}|D(a_i)|<br>$$<br>我们接着往下面推<br>$$<br>\sum_{i=1}^{n}|Z_j|=\sum_{i=1}^{s}|D(a_i)|\\<br>=\sum_{i=1}^{L}\sum_{k\in|E_i|}|Z_k|<br>$$<br>这里不难理解吧，我们假设一共有$L$个等价类，各个等价类加起来实际上和原来是一样多的，对吧,然后</p>
+<p>$$<br>=\sum_{i=1}^{L}|E_i|<em>|Z_i|\\<br>=\sum_{i=1}^{L}|G|=L</em>|G|\\<br>L=\frac{1}{|G|}\sum_{i=1}^{n}|Z_i|=\frac{1}{|G|}\sum_{i=1}^{n}|D(a_i)|<br>$$<br> 可是，虽然我们得到了这一个式子，但是啊，难道这一个$|Z_i|$,或者$D(a_j)$什么的，难道很好算吗？，一点都没有啊，所以说接下来还是得来看一看$Polya$定理</p>
+<h3 id="Polya定理-1"><a href="#Polya定理-1" class="headerlink" title="Polya定理"></a><font color=1453ad>Polya定理</font></h3><h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a><font color=c62b26>循环</font></h4><p>这个真的就是一个很神奇的东西，简单的来说就是一种来表示置换的方法，来看看下面这一个例子<br>$$<br>\begin{pmatrix}<br>1&amp;2&amp;3&amp;4&amp;5\\<br>3&amp;5&amp;1&amp;4&amp;2<br>\end{pmatrix}=(13)(25)(4)<br>$$<br>这样的表示是唯一的，每一个置换都可以写成若干个互不相交的循环的乘积（我想这里肯定又是重新定义了一下），对于这些循环的个数就叫做循环节数（名字听起来和小学学的小数的循环节差不多，但是要难的多）</p>
+<h4 id="Polya定理的表达式"><a href="#Polya定理的表达式" class="headerlink" title="Polya定理的表达式"></a><font color=c62b26>Polya定理的表达式</font></h4><p>既然我们已经是知道了什么是循环，那么我们终于是可以写出这个该死的$Polya$定理的表达式了<br>$$<br>L=\frac{1}{|G|}(m^{c(g1)}+m^{c(g2)}+\cdots+m^{c(g_n)})<br>$$<br>其中$G$是${g_1.g_2,g_3\cdots,g_n}$,$c(g_i)$表示置换$g_i$的循环节个数，这一个式子看起来很神奇对吧，实际上和上面的$Burnside$引理是差不多的，只是换了一种表达的方式，这是前人们通过观察证明得出来的结论，这意味着我并不知道如何从$Burnside$引理推到$Polya$定理。</p>
+<h2 id="Polya定理的运用"><a href="#Polya定理的运用" class="headerlink" title="Polya定理的运用"></a><font color =darkmagenta>Polya定理的运用</font></h2><p>下面让我们来看一道题目，这一道题目和方格子着色有关</p>
+<blockquote>
+<p>对于一个2*2的矩阵，选择用黑白两种颜色来进行着色，如果说经过了旋转以后，得到的图形是相同的话，那么认为是同一种染色的方案。</p>
+</blockquote>
+<p>因为数据很小，所以说可以通过枚举的方式得出所有的可能性：</p>
+<p><img src="https://i.loli.net/2019/07/25/5d399e9be352098161.png"></p>
+<p>我们可以看出，如果说是不重复的话，那么一共就有16种方案，但是如果说是要去除掉重复的方案的数量的话，那么就是一共有6种了。尽管说从目前的数据规模来看，这一道题目十分简单，但是如果说数据在扩大个几十倍甚至是上百倍的话，那么就十分不容易解决这一个问题了</p>
+<p>因此这里我们就必须要用到刚才的知识来解决现在的问题了</p>
+<p>设置换群$G={转0度，转90度，转180度，转270度}$</p>
+<p>来标号分别写出四个变化的置换。然后看看，在第一个置换下面，每一个都是不会变的，而对于第二个和第四个置换，第一种和第二种图都是不会变的，对于第三个置换，则是增加了两个对角线填色的图，因此就可以直接代入到式子当中直接得到答案了。</p>
+<p>好了，心里面大概也算的上是有一点谱了，差不多就是这么多内容了。（实际上还有一个母函数的内容，但是我自己并不是很懂。）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Ddmiurge</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2021/09/05/Polya定理和母函数/" target="_blank" title="Polya定理">http://example.com/2021/09/05/Polya定理和母函数/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Polya%E5%AE%9A%E7%90%86/" rel="tag">Polya定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BE%A4%E8%AE%BA/" rel="tag">群论</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/05/LGP4377/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          LuoguP4377
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/05/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">博弈论入门</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">群论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2"><span class="nav-number">1.2.</span> <span class="nav-text">置换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2%E7%BE%A4"><span class="nav-number">1.3.</span> <span class="nav-text">置换群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%A5%9E%E5%A5%87%E7%9A%84%E5%BC%8F%E5%AD%90%E5%92%8C%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.</span> <span class="nav-text">一个神奇的式子和概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polya%E5%AE%9A%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">Polya定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Burnside%E5%BC%95%E7%90%86"><span class="nav-number">2.1.</span> <span class="nav-text">Burnside引理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Polya%E5%AE%9A%E7%90%86-1"><span class="nav-number">2.2.</span> <span class="nav-text">Polya定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.2.1.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Polya%E5%AE%9A%E7%90%86%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.2.2.</span> <span class="nav-text">Polya定理的表达式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polya%E5%AE%9A%E7%90%86%E7%9A%84%E8%BF%90%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">Polya定理的运用</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Ddmiurge&#39;s blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Ddmiurge All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

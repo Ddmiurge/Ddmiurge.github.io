@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>博弈论入门 | Ddmiurge&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="搬运自旧博客博弈论SG函数" />
+  
+  
+  
+  
+  <meta name="description" content="关于博弈论的一点基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论入门">
+<meta property="og:url" content="http://example.com/2021/09/05/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Ddmiurge&#39;s blog">
+<meta property="og:description" content="关于博弈论的一点基础知识">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-05T02:20:21.804Z">
+<meta property="article:modified_time" content="2021-09-05T02:20:22.158Z">
+<meta property="article:author" content="Ddmiurge">
+<meta property="article:tag" content="搬运自旧博客">
+<meta property="article:tag" content="博弈论">
+<meta property="article:tag" content="SG函数">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-博弈论入门" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      博弈论入门
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/09/05/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%85%A5%E9%97%A8/" class="article-date">
+	  <time datetime="2021-09-05T02:20:21.804Z" itemprop="datePublished">2021-09-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="博弈论（Game-Theory）"><a href="#博弈论（Game-Theory）" class="headerlink" title="博弈论（Game Theory）"></a><font color=blue>博弈论（Game Theory）</font></h1><p>首先先说两个定义<br>N状态:<font color=red>前面的一个玩家</font>必胜<br>P状态: <font color=red>后面一个玩家</font>必胜</p>
+<h2 id="巴什博弈-（Bush-Game）"><a href="#巴什博弈-（Bush-Game）" class="headerlink" title="巴什博弈 （Bush Game）"></a>巴什博弈 （Bush Game）</h2><p>有一堆数量为n的物体，轮流拿，至少拿1个，至多拿k个(N&gt;K);<br>如果<code>n%（k+1）==0</code>，那么先手必败。<br><s>这一切是显而易见，毫无疑问的</s></p>
+<blockquote>
+<p>一道例题<br>Tang and Jiang are good friends. To decide whose treat it is for dinner, they are playing a game. Specifically, Tang and Jiang will alternatively write numbers (integers) on a white board. Tang writes first, then Jiang, then again Tang, etc… Moreover, assuming that the number written in the previous round is X, the next person who plays should write a number Y such that 1 &lt;= Y - X &lt;= k. The person who writes a number no smaller than N first will lose the game. Note that in the first round, Tang can write a number only within range [1, k] (both inclusive). You can assume that Tang and Jiang will always be playing optimally, as they are both very smart students.</p>
+</blockquote>
+<p>这一道题目大意上和Bush Game 差不多，但是不同的是它里面说的是写不出不小于n的就输了，那么必胜的时候就是你已经写出了n-1的时候。所以此时如果<code>(n-1)%(k+1)==0</code>那么先手必定输，否则就是后手输，因为先手那一次后可已转换为第一种情况</p>
+<h2 id="尼姆博弈-（Nim-Game）"><a href="#尼姆博弈-（Nim-Game）" class="headerlink" title="尼姆博弈 （Nim Game）"></a>尼姆博弈 （Nim Game）</h2><p>有n堆物体，每一堆的数量为a[i]个，每一次一个人任选一堆取出任意个（不能为0）<br>设k为每一堆异或的结果，如果<code>k==0</code>，那么先手必定失败，否则先手必定胜利。<br>这样来想，把每一堆的数量转换成二进制然后竖着来最低位对齐。如果说<code>k==0</code>,那么这意味这每一个列的1的个数一定会是偶数个。而第一个人取走了一些以后呢，这意味着一定一些列的1的个数为变成奇数个，那么k一定就不再等于0了。而此时后手的人只要把异或的值修正为0就可以了。<br>因为<font color=red>k不等于0了，那么这就说明k的最高位一定会是1，而这个最高位的1一定会是a[i]中的对应位上的1提供的</font>。<br>而根据异或的性质，k和a[i]异或结果为其他的异或结果。<br>我们可以在a[i]中减去一些值，是a[i]最终等于k和a[i]异或的结果，<font color=red>又因为k最高位的1是由a[i]提供的，那么那里一定会变成0，就一定会比a[i]小，而只要把这里减掉，k就又会等于0了</font></p>
+<h2 id="SG函数"><a href="#SG函数" class="headerlink" title="SG函数"></a>SG函数</h2><h3 id="公平组合游戏"><a href="#公平组合游戏" class="headerlink" title="公平组合游戏"></a>公平组合游戏</h3><p>1.双方交替来进行；<br>2.游戏进行的任意时刻，可以执行的合法行动与哪一个玩家执行无关；<br>3.当玩家无法行动的时候，就判负</p>
+<h3 id="mex运算"><a href="#mex运算" class="headerlink" title="mex运算"></a>mex运算</h3><p>$$<br>mex(S)=min{x|x\in N,x\notin S}<br>$$</p>
+<h3 id="SG函数-1"><a href="#SG函数-1" class="headerlink" title="SG函数"></a>SG函数</h3><p>对于任意状态下的x<br>$$<br>SG(x)=mex{SG(y)|y是x的后继状态}<br>$$<br>对于终止状态，SG值为0。</p>
+<blockquote>
+<p>如果某一状态后继SG有0，则当前状态为N<br>如果当前状态所有后继SG不为0，则当前为P;</p>
+</blockquote>
+<p>好的，既然已经知道了SG函数是什么，那么就有一道题了。</p>
+<h4 id="移棋子游戏"><a href="#移棋子游戏" class="headerlink" title="移棋子游戏"></a>移棋子游戏</h4><blockquote>
+<p><font color=blue><strong>Description</strong></font></p>
+</blockquote>
+<p>给定一个有N个节点的DAG图，图上某些节点上面有棋子。两名玩家交替移动棋子，玩家每一次可以将任意一颗棋子沿着有向边移动到下一个节点，当无法移动的时候，就输掉了游戏，假设双方都足够聪明，问先手必胜还是后手必胜。</p>
+<blockquote>
+<p><font color=blue><strong>Input</strong></font></p>
+</blockquote>
+<p>第一行三个整数N,M,K,表示N个节点M条边K个棋子。接下来M行，每行两个整数x,y,代表x节点到y节点的有向边再接下来K行，表示K个棋子所在的节点编号。</p>
+<blockquote>
+<p><font color=blue><strong>output</strong></font></p>
+</blockquote>
+<p>先手胜输出”win”,否则输出”lose”</p>
+<blockquote>
+<p><font color=blue><strong>Sample Input</strong></font></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">6 8 4</span><br><span class="line">2 1</span><br><span class="line">2 4</span><br><span class="line">1 4</span><br><span class="line">1 5</span><br><span class="line">4 5</span><br><span class="line">1 3</span><br><span class="line">3 5</span><br><span class="line">3 6</span><br><span class="line">1 2 4 6</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><font color=blue><strong>Sample Output</strong></font></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">win</span><br></pre></td></tr></table></figure>
+
+<p>这应该是我第一次这么抄题吧。<br>DAG图，看到这个应该回想起拓扑排序，其次，因为没有后继的点$SG$值为0，而每一个点的$SG$值又是有它的后继决定的。如果它的后继没有弄完，那么就不可以算。这很像拓扑排序把入度为0的点push进队列。<br>因此不难想到这一题可以用类似于拓扑排序的方法来做。我们需要存两个图，正向的和反向的。正向的图用来寻找这一个点的后继获取这一个点的$SG$值，反向的用来找祖宗，修改祖宗的出度，并把出度为0的祖宗push进入队列<br>因为有拓扑排序的基础，所以这一道题可以比较容易的做出来了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 2003</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">queue&lt;<span class="keyword">int</span>&gt;Q;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;G[maxn];<span class="comment">//正着存图</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;G_[maxn];<span class="comment">//反着存图</span></span><br><span class="line"><span class="keyword">int</span> chess[maxn],SG[maxn];<span class="comment">//记录棋子的位置 ,SG函数值 </span></span><br><span class="line"><span class="keyword">bool</span> vis[maxn*<span class="number">3</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,outdgr[maxn];<span class="comment">//记录点，边，出度 </span></span><br><span class="line"><span class="keyword">int</span> k; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!outdgr[i])&#123;</span><br><span class="line">			Q.<span class="built_in">push</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(!Q.<span class="built_in">empty</span>())&#123;	</span><br><span class="line">		<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(vis));	</span><br><span class="line">		<span class="keyword">int</span> u=Q.<span class="built_in">front</span>();Q.<span class="built_in">pop</span>();</span><br><span class="line">		vector&lt;<span class="keyword">int</span>&gt;::iterator iter=G[u].<span class="built_in">begin</span>();</span><br><span class="line">		<span class="keyword">int</span> maxsg=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(iter!=G[u].<span class="built_in">end</span>())&#123;</span><br><span class="line">			maxsg=<span class="built_in">max</span>(maxsg,SG[*iter]);</span><br><span class="line">			vis[SG[*iter]]=<span class="literal">true</span>;</span><br><span class="line">			iter++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> j;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=maxsg+<span class="number">1</span>;j++)<span class="keyword">if</span>(!vis[j])<span class="keyword">break</span>;</span><br><span class="line">		SG[u]=j;<span class="comment">//得到这一个点的SG值 </span></span><br><span class="line">		vector&lt;<span class="keyword">int</span>&gt;::iterator iter_=G_[u].<span class="built_in">begin</span>();</span><br><span class="line">		<span class="keyword">while</span>(iter_!=G_[u].<span class="built_in">end</span>())&#123;</span><br><span class="line">			outdgr[*iter_]--;</span><br><span class="line">			<span class="keyword">if</span>(!outdgr[*iter_])Q.<span class="built_in">push</span>(*iter_);</span><br><span class="line">			iter_++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=SG[chess[<span class="number">1</span>]];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=k;i++)ans^=SG[chess[i]];</span><br><span class="line">	<span class="keyword">if</span>(!ans)<span class="built_in">printf</span>(<span class="string">&quot;lose\n&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;win\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> ; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(outdgr,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(outdgr));</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> u,v;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;u,&amp;v);</span><br><span class="line">		G[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">		G_[v].<span class="built_in">push_back</span>(u); </span><br><span class="line">		outdgr[u]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;chess[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">solve</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>那么，That’s all.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Ddmiurge</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2021/09/05/博弈论入门/" target="_blank" title="博弈论入门">http://example.com/2021/09/05/博弈论入门/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SG%E5%87%BD%E6%95%B0/" rel="tag">SG函数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="tag">博弈论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%AC%E8%BF%90%E8%87%AA%E6%97%A7%E5%8D%9A%E5%AE%A2/" rel="tag">搬运自旧博客</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/05/Polya%E5%AE%9A%E7%90%86%E5%92%8C%E6%AF%8D%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Polya定理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/05/%E9%80%92%E6%8E%A8%E5%A4%8D%E4%B9%A0%20(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">dp review (1)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88Game-Theory%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">博弈论（Game Theory）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%BC%88-%EF%BC%88Bush-Game%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">巴什博弈 （Bush Game）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BC%E5%A7%86%E5%8D%9A%E5%BC%88-%EF%BC%88Nim-Game%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">尼姆博弈 （Nim Game）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SG%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">SG函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">公平组合游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mex%E8%BF%90%E7%AE%97"><span class="nav-number">1.3.2.</span> <span class="nav-text">mex运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SG%E5%87%BD%E6%95%B0-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">SG函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E6%A3%8B%E5%AD%90%E6%B8%B8%E6%88%8F"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">移棋子游戏</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Ddmiurge&#39;s blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Ddmiurge All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
