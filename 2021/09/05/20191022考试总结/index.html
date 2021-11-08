@@ -1,180 +1,59 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans" class="loading">
 <head>
-  <meta charset="utf-8">
-  
-  <title>20191022考试总结 | Ddmiurge&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="keywords" content="Tarjan期望" />
-  
-  
-  
-  
-  <meta name="description" content="啊啊啊，停课第一天成功爆零">
-<meta property="og:type" content="article">
-<meta property="og:title" content="20191022考试总结">
-<meta property="og:url" content="http://example.com/2021/09/05/20191022%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/index.html">
-<meta property="og:site_name" content="Ddmiurge&#39;s blog">
-<meta property="og:description" content="啊啊啊，停课第一天成功爆零">
-<meta property="og:locale">
-<meta property="article:published_time" content="2021-09-05T02:20:22.253Z">
-<meta property="article:modified_time" content="2021-09-05T02:20:22.597Z">
-<meta property="article:author" content="Ddmiurge">
-<meta property="article:tag" content="Tarjan">
-<meta property="article:tag" content="期望">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
-  
-
-  
-
-  <link rel="icon" href="/css/images/mylogo.jpg">
-  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <style type="text/css">
-    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
-    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
-}
-
-  </style>
-  
-<link rel="stylesheet" href="/css/style.css">
-
-
-  
-<script src="/js/jquery-3.1.1.min.js"></script>
-
-  
-<script src="/js/bootstrap.js"></script>
-
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css" >
-
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>20191022考试总结 - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
     
-<link rel="stylesheet" href="/css/dialog.css">
-
-  
-
-  
-
-  
-    <link rel="stylesheet" href="/css/header-post.css" >
-  
-
-  
-  
-  
+    <meta name="description" content="XorarrayDescription
+xor——异或，和 and 与or 一样，是一种重要的逻辑运算，他的运算规律是 0 xor 0 = 0，1 xor 1 = 0，1 xor 0 = 1，0 x,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-
-
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
-
-
-  
-  <div id="container">
-    <div id="wrap">
-      
-        <header>
-
-    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="navbar-inner">
-          
-          <div class="container"> 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            
-              <a class="brand" style="
-                 margin-top: 0px;"  
-                href="#" data-toggle="modal" data-target="#myModal" >
-                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
-              </a>
-            
-            
-            <div class="navbar-collapse collapse">
-              <ul class="hnav navbar-nav">
-                
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
-                
-                  <li><div id="search-form-wrap">
-
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-
-</div></li>
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">20191022考试总结</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
-          </div>
-                
-      </div>
+            <div id="qr"></div>
+        </div>
     </div>
+    <div class="scrollbar"></div>
+</div>
 
-</header>
-
-
-
-      
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">20191022考试总结</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
             
-      <div id="content" class="outer">
-        
-          <section id="main" style="float:none;"><article id="post-20191022考试总结" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" class="article-title" itemprop="name">
-      20191022考试总结
-    </h1>
-  
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Tarjan/" rel="tag">Tarjan</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%9C%9F%E6%9C%9B/" rel="tag">期望</a></li></ul>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/09/05/20191022%E8%80%83%E8%AF%95%E6%80%BB%E7%BB%93/" class="article-date">
-	  <time datetime="2021-09-05T02:20:22.253Z" itemprop="datePublished">2021-09-05</time>
-	</a>
 
-      
-    <a class="article-category-link" href="/categories/test/">test</a>
-
-      
-	<a class="article-views">
-	<span id="busuanzi_container_page_pv">
-		PV:<span id="busuanzi_value_page_pv"></span>
-	</span>
-	</a>
-
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Xorarray"><a href="#Xorarray" class="headerlink" title="Xorarray"></a><font color=darkmagenta><em>Xorarray</em></font></h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a><font color=1453ad><em>Description</em></font></h3><blockquote>
+        </div>
+        <div class="content markdown">
+            <h2 id="Xorarray"><a href="#Xorarray" class="headerlink" title="Xorarray"></a><font color=darkmagenta><em>Xorarray</em></font></h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a><font color=1453ad><em>Description</em></font></h3><blockquote>
 <p>xor——异或，和 and 与or 一样，是一种重要的逻辑运算，他的运算规律是 0 xor 0 = 0，1 xor 1 = 0，1 xor 0 = 1，0 xor 1 = 1</p>
 <p>两个整数之间的异或是将两个整数转化成二进制，对他们的每一位分别进行 xor 操作，例：6(110) xor 13(1101) = 11(1011)</p>
 <p>现在我们要介绍一种新的操作——数组异或，将两个相同大小（假设都为n）的数组A、B异或成一个新数组C，则新数组必满足:<br>$$<br>C[k]=\sum_i^{k}\sum_j^{k}\ A[i]\bigoplus  B[i]<br>$$</p>
@@ -237,290 +116,112 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 20005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N,M;</span><br><span class="line"><span class="keyword">int</span> fa[maxn],size[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> u;</span><br><span class="line">	<span class="keyword">int</span> v;</span><br><span class="line">	<span class="keyword">int</span> d;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> edge &amp;cmp)<span class="keyword">const</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> d&lt;cmp.d; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;E[maxn*<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Kruscal</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Seek</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;detective.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;detective.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>); </span><br><span class="line">	cin&gt;&gt;N&gt;&gt;M; </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=M;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> u,v,d;cin&gt;&gt;u&gt;&gt;v&gt;&gt;d;</span><br><span class="line">		E[i]=(edge)&#123;u,v,d&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(E+<span class="number">1</span>,E+<span class="number">1</span>+M);</span><br><span class="line">	<span class="built_in">Kruscal</span>();</span><br><span class="line">	<span class="built_in">fclose</span>(stdin);</span><br><span class="line">	<span class="built_in">fclose</span>(stdout);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Seek</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x!=fa[x])<span class="keyword">return</span> fa[x]=<span class="built_in">Seek</span>(fa[x]);</span><br><span class="line">	<span class="keyword">return</span> fa[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	fa[x]=y;</span><br><span class="line">	size[y]=size[y]+size[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Kruscal</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)fa[i]=i,size[i]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	db off=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=M;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> u=E[i].u;</span><br><span class="line">		<span class="keyword">int</span> v=E[i].v;</span><br><span class="line">		<span class="keyword">int</span> d=E[i].d;</span><br><span class="line">		<span class="keyword">int</span> fu=<span class="built_in">Seek</span>(u);</span><br><span class="line">		<span class="keyword">int</span> fv=<span class="built_in">Seek</span>(v);</span><br><span class="line">		<span class="keyword">if</span>(fu!=fv)&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">			ans+=d;</span><br><span class="line">			off+=((<span class="number">2</span>*(<span class="keyword">double</span>)d*(<span class="keyword">double</span>)size[fu]*(<span class="keyword">double</span>)size[fv])/(<span class="keyword">double</span>)(N*(N<span class="number">-1</span>)+<span class="number">0.0</span>));</span><br><span class="line">			<span class="built_in">Union</span>(fu,fv); </span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">if</span>(cnt==N<span class="number">-1</span>)<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>,ans-off);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
     </div>
-    <footer class="article-footer">
-      
-      
-      <div>
-        <ul class="post-copyright">
-          <li class="post-copyright-author">
-          <strong>Post author:  </strong>Ddmiurge</a>
-          </li>
-          <li class="post-copyright-link">
-          <strong>Post link:  </strong>
-          <a href="/2021/09/05/20191022考试总结/" target="_blank" title="20191022考试总结">http://example.com/2021/09/05/20191022考试总结/</a>
-          </li>
-          <li class="post-copyright-license">
-            <strong>Copyright Notice:   </strong>
-            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-            unless stating additionally.
-          </li>
-         
-        </ul>
-<div>
-
-      
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
-
-      
-      
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tarjan/" rel="tag">Tarjan</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%9F%E6%9C%9B/" rel="tag">期望</a></li></ul>
-
-      
-
-    </footer>
-  </div>
-  
     
-<nav id="article-nav">
-  
-    <a href="/2021/09/05/20190920/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          20190920周记
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/09/05/K-D%20tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">K-D tree入门</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-<!-- Table of Contents -->
-
-  <aside id="toc-sidebar">
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
-    
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Xorarray"><span class="nav-number">1.</span> <span class="nav-text">Xorarray</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">1.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">1.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis"><span class="nav-number">1.4.</span> <span class="nav-text">Analysis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Road"><span class="nav-number">2.</span> <span class="nav-text">Road</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-1"><span class="nav-number">2.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-1"><span class="nav-number">2.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis-1"><span class="nav-number">2.4.</span> <span class="nav-text">Analysis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detective"><span class="nav-number">3.</span> <span class="nav-text">Detective</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-2"><span class="nav-number">3.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-2"><span class="nav-number">3.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis-2"><span class="nav-number">3.4.</span> <span class="nav-text">Analysis</span></a></li></ol></li></ol>
-    
-    </div>
-  </aside>
-
-</section>
-        
-      </div>
-      
-      <footer id="footer">
-  
-
-  <div class="container">
-      	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
-	      
-	      
-    		<p class="busuanzi_uv">
-				UV : <span id="busuanzi_value_site_uv"></span> |  
-				PV : <span id="busuanzi_value_site_pv"></span>
-		    </p>
-  		   
-		</div>
-
-		
-  </div>
-</footer>
-
-
-<!-- min height -->
-
-<script>
-    var wrapdiv = document.getElementById("wrap");
-    var contentdiv = document.getElementById("content");
-    var allheader = document.getElementById("allheader");
-
-    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
-    if (allheader != null) {
-      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    } else {
-      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    }
-</script>
-    </div>
-    <!-- <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tags</a>
-  
-    <a href="/about" class="mobile-nav-link">About</a>
-  
-</nav> -->
-    
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/scripts.js"></script>
-
-
-
-
-
-  
-<script src="/js/dialog.js"></script>
-
-
-
-
-
-
-
-
-
-	<div style="display: none;">
-    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-  </div>
-
-
-
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-	</script>
-
-
-
-
-
-
-  </div>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
-      </div>
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-
-
-      <div class="modal-body">
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
-            </a>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            您已调整页面字体大小
-          </div>
-        </div>
-      
-
-
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
-            </a>
-        </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
-          </div>
-        </div>
-
-        <div>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        </div>
-         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            Ddmiurge&#39;s blog
-          </div>
-          <div class="panel-body">
-            Copyright © 2021 Ddmiurge All Rights Reserved.
-          </div>
-        </div>
-      </div>
-
-
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <div class="modal-footer">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-      </div>
-    </div>
-  </div>
 </div>
-  
-  <a id="rocket" href="#top" class=""></a>
-  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-  
-    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
-  
+
+
+    </div>
+</div>
 </body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 </html>

@@ -1,468 +1,168 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans" class="loading">
 <head>
-  <meta charset="utf-8">
-  
-  <title>概率和期望入门 | Ddmiurge&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="keywords" content="概率期望搬运自旧博客" />
-  
-  
-  
-  
-  <meta name="description" content="概率与期望部分的基础">
-<meta property="og:type" content="article">
-<meta property="og:title" content="概率和期望入门">
-<meta property="og:url" content="http://example.com/2021/09/05/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/index.html">
-<meta property="og:site_name" content="Ddmiurge&#39;s blog">
-<meta property="og:description" content="概率与期望部分的基础">
-<meta property="og:locale">
-<meta property="article:published_time" content="2021-09-05T02:20:21.380Z">
-<meta property="article:modified_time" content="2021-09-05T02:20:21.782Z">
-<meta property="article:author" content="Ddmiurge">
-<meta property="article:tag" content="概率期望">
-<meta property="article:tag" content="搬运自旧博客">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
-  
-
-  
-
-  <link rel="icon" href="/css/images/mylogo.jpg">
-  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <style type="text/css">
-    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
-    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
-}
-
-  </style>
-  
-<link rel="stylesheet" href="/css/style.css">
-
-
-  
-<script src="/js/jquery-3.1.1.min.js"></script>
-
-  
-<script src="/js/bootstrap.js"></script>
-
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css" >
-
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>概率和期望入门 - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
     
-<link rel="stylesheet" href="/css/dialog.css">
-
-  
-
-  
-
-  
-    <link rel="stylesheet" href="/css/header-post.css" >
-  
-
-  
-  
-  
+    <meta name="description" content="概率与期望期望概率这一个词语在生活中实际上是经常会碰见的，所以说这里我就来说一说相对而言遇到的要少一些的期望。这个期望啊，可以理解为某些事件大量发生以后的平均的结果。这就好比一个六面的色子扔了很多很,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-
-
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
-
-
-  
-  <div id="container">
-    <div id="wrap">
-      
-        <header>
-
-    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="navbar-inner">
-          
-          <div class="container"> 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            
-              <a class="brand" style="
-                 margin-top: 0px;"  
-                href="#" data-toggle="modal" data-target="#myModal" >
-                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
-              </a>
-            
-            
-            <div class="navbar-collapse collapse">
-              <ul class="hnav navbar-nav">
-                
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
-                
-                  <li><div id="search-form-wrap">
-
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-
-</div></li>
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">概率和期望入门</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
-          </div>
-                
-      </div>
+            <div id="qr"></div>
+        </div>
     </div>
+    <div class="scrollbar"></div>
+</div>
 
-</header>
-
-
-
-      
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">概率和期望入门</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
             
-      <div id="content" class="outer">
-        
-          <section id="main" style="float:none;"><article id="post-概率期望" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" class="article-title" itemprop="name">
-      概率和期望入门
-    </h1>
-  
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%90%AC%E8%BF%90%E8%87%AA%E6%97%A7%E5%8D%9A%E5%AE%A2/" rel="tag">搬运自旧博客</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/" rel="tag">概率期望</a></li></ul>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/09/05/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/" class="article-date">
-	  <time datetime="2021-09-05T02:20:21.380Z" itemprop="datePublished">2021-09-05</time>
-	</a>
 
-      
-    <a class="article-category-link" href="/categories/%E6%95%B0%E8%AE%BA/">数论</a>
-
-      
-	<a class="article-views">
-	<span id="busuanzi_container_page_pv">
-		PV:<span id="busuanzi_value_page_pv"></span>
-	</span>
-	</a>
-
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概率与期望"><a href="#概率与期望" class="headerlink" title="概率与期望"></a><font color=blue>概率与期望</font></h1><h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>概率这一个词语在生活中实际上是经常会碰见的，所以说这里我就来说一说相对而言遇到的要少一些的期望。这个期望啊，可以理解为<font color=red><strong>某些事件大量发生以后的平均的结果</strong></font>。这就好比一个六面的色子扔了很多很多次以后，色子平均值会趋近于<code>3.5</code>。<s>这个原因啊，是显而易见，毫无疑问的，就不需要再多解释了</s>。</p>
+        </div>
+        <div class="content markdown">
+            <h1 id="概率与期望"><a href="#概率与期望" class="headerlink" title="概率与期望"></a><font color=blue>概率与期望</font></h1><h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>概率这一个词语在生活中实际上是经常会碰见的，所以说这里我就来说一说相对而言遇到的要少一些的期望。这个期望啊，可以理解为<font color=red><strong>某些事件大量发生以后的平均的结果</strong></font>。这就好比一个六面的色子扔了很多很多次以后，色子平均值会趋近于<code>3.5</code>。<s>这个原因啊，是显而易见，毫无疑问的，就不需要再多解释了</s>。</p>
 <h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>好的，有一道例题可以看看<br><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/P4316">洛谷P4316</a><br>这一道题啊，读完了我就想到了拓扑排序，，同时用两个变长数组来存就可以了<s>最开始我想用边集，可是我不知道怎么用边集来拓扑排序啊，于是ZhuFN大佬提醒我用两个变长数组</s>。因此，我们只需要用两个变长数组，一个<font color=red>用来存点</font>,一个用来<font color=red>存权值</font>就OK了。<br>而这一个拓扑排序的过程中，相对与普通的拓扑排序，增加上对于期望长度的累加就可以了这是因为期望具有可加性<br>$probab(u)$来的那一个点的期望长度，<code>w</code>为这一条边的权值，$outdgr(v)$为有几条路进来，那么可以得到<br>$$<br>probab(v)=[probab(u)+w]/outdgr(v)<br>$$<br>我们这里可采用正着来或反着来（应该是吧），就像是$USACO$的数字金字塔一样吧</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 100005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">queue&lt;<span class="keyword">int</span>&gt; Q;			</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;G[maxn];</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;W[maxn];</span><br><span class="line"><span class="keyword">int</span> n,tmp=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> indgr[maxn];</span><br><span class="line"><span class="keyword">int</span> outdgr[maxn];</span><br><span class="line"><span class="keyword">double</span> probab[maxn];</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">topsort</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Q.<span class="built_in">push</span>(n);</span><br><span class="line">    <span class="keyword">while</span>(!(Q.<span class="built_in">empty</span>()))&#123;</span><br><span class="line">        <span class="keyword">int</span> u=Q.<span class="built_in">front</span>();</span><br><span class="line">        Q.<span class="built_in">pop</span>();</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt;::iterator iterG=G[u].<span class="built_in">begin</span>();</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt;::iterator iterW=W[u].<span class="built_in">begin</span>();</span><br><span class="line">        <span class="keyword">while</span>(iterG!=G[u].<span class="built_in">end</span>())&#123;</span><br><span class="line">            <span class="keyword">int</span> v=*iterG,w=*iterW;</span><br><span class="line">            indgr[v]--;</span><br><span class="line">            probab[v]+=(probab[u]+w)/(outdgr[v]);</span><br><span class="line">            <span class="keyword">if</span>(!indgr[v])&#123;</span><br><span class="line">                Q.<span class="built_in">push</span>(v);</span><br><span class="line">            &#125;</span><br><span class="line">            iterW++;iterG++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(indgr,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(indgr));</span><br><span class="line">    <span class="built_in">memset</span>(outdgr,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(outdgr));</span><br><span class="line">    <span class="built_in">memset</span>(probab,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(probab));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">        indgr[a]++;outdgr[a]++;</span><br><span class="line">        G[b].<span class="built_in">push_back</span>(a);</span><br><span class="line">        W[b].<span class="built_in">push_back</span>(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">topsort</span>();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>,probab[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里再附上另外的大佬这道题的链接，我是看了dyx大佬代码以后才发现自己累加的地方做错了的<s>对，没错，我最开始错了</s>,而 ZhuFN则是用的dfs做的。<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/saitoasuka/p/10337553.html">dyx</a><br><a target="_blank" rel="noopener" href="http://buringstraw.win/index.php/archives/21/">zfn</a><br>那么就可以了</p>
 
-      
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
     </div>
-    <footer class="article-footer">
-      
-      
-      <div>
-        <ul class="post-copyright">
-          <li class="post-copyright-author">
-          <strong>Post author:  </strong>Ddmiurge</a>
-          </li>
-          <li class="post-copyright-link">
-          <strong>Post link:  </strong>
-          <a href="/2021/09/05/概率期望/" target="_blank" title="概率和期望入门">http://example.com/2021/09/05/概率期望/</a>
-          </li>
-          <li class="post-copyright-license">
-            <strong>Copyright Notice:   </strong>
-            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-            unless stating additionally.
-          </li>
-         
-        </ul>
-<div>
-
-      
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
-
-      
-      
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%AC%E8%BF%90%E8%87%AA%E6%97%A7%E5%8D%9A%E5%AE%A2/" rel="tag">搬运自旧博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/" rel="tag">概率期望</a></li></ul>
-
-      
-
-    </footer>
-  </div>
-  
     
-<nav id="article-nav">
-  
-    <a href="/2021/09/05/%E4%BA%8C%E5%88%86%E5%9B%BE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          二分图匹配
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/09/05/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8E%8B%E4%BD%8D/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">高精度压位</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-<!-- Table of Contents -->
-
-  <aside id="toc-sidebar">
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
-    
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B"><span class="nav-number">1.</span> <span class="nav-text">概率与期望</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B"><span class="nav-number">1.1.</span> <span class="nav-text">期望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">例题</span></a></li></ol></li></ol>
-    
-    </div>
-  </aside>
-
-</section>
-        
-      </div>
-      
-      <footer id="footer">
-  
-
-  <div class="container">
-      	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
-	      
-	      
-    		<p class="busuanzi_uv">
-				UV : <span id="busuanzi_value_site_uv"></span> |  
-				PV : <span id="busuanzi_value_site_pv"></span>
-		    </p>
-  		   
-		</div>
-
-		
-  </div>
-</footer>
-
-
-<!-- min height -->
-
-<script>
-    var wrapdiv = document.getElementById("wrap");
-    var contentdiv = document.getElementById("content");
-    var allheader = document.getElementById("allheader");
-
-    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
-    if (allheader != null) {
-      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    } else {
-      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    }
-</script>
-    </div>
-    <!-- <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tags</a>
-  
-    <a href="/about" class="mobile-nav-link">About</a>
-  
-</nav> -->
-    
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/scripts.js"></script>
-
-
-
-
-
-  
-<script src="/js/dialog.js"></script>
-
-
-
-
-
-
-
-
-
-	<div style="display: none;">
-    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-  </div>
-
-
-
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-	</script>
-
-
-
-
-
-
-  </div>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
-      </div>
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-
-
-      <div class="modal-body">
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
-            </a>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            您已调整页面字体大小
-          </div>
-        </div>
-      
-
-
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
-            </a>
-        </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
-          </div>
-        </div>
-
-        <div>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        </div>
-         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            Ddmiurge&#39;s blog
-          </div>
-          <div class="panel-body">
-            Copyright © 2021 Ddmiurge All Rights Reserved.
-          </div>
-        </div>
-      </div>
-
-
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <div class="modal-footer">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-      </div>
-    </div>
-  </div>
 </div>
-  
-  <a id="rocket" href="#top" class=""></a>
-  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-  
-    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
-  
+
+
+    </div>
+</div>
 </body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 </html>

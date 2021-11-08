@@ -1,181 +1,59 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans" class="loading">
 <head>
-  <meta charset="utf-8">
-  
-  <title>20190710 test | Ddmiurge&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="keywords" content="主席树dpdfs序" />
-  
-  
-  
-  
-  <meta name="description" content="20190710的test">
-<meta property="og:type" content="article">
-<meta property="og:title" content="20190710 test">
-<meta property="og:url" content="http://example.com/2021/09/05/20190710test/index.html">
-<meta property="og:site_name" content="Ddmiurge&#39;s blog">
-<meta property="og:description" content="20190710的test">
-<meta property="og:locale">
-<meta property="article:published_time" content="2021-09-05T02:20:22.933Z">
-<meta property="article:modified_time" content="2021-09-05T02:20:23.242Z">
-<meta property="article:author" content="Ddmiurge">
-<meta property="article:tag" content="主席树">
-<meta property="article:tag" content="dp">
-<meta property="article:tag" content="dfs序">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
-  
-
-  
-
-  <link rel="icon" href="/css/images/mylogo.jpg">
-  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <style type="text/css">
-    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
-    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
-}
-
-  </style>
-  
-<link rel="stylesheet" href="/css/style.css">
-
-
-  
-<script src="/js/jquery-3.1.1.min.js"></script>
-
-  
-<script src="/js/bootstrap.js"></script>
-
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css" >
-
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>20190710 test - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
     
-<link rel="stylesheet" href="/css/dialog.css">
-
-  
-
-  
-
-  
-    <link rel="stylesheet" href="/css/header-post.css" >
-  
-
-  
-  
-  
+    <meta name="description" content="20190710的testT1Desctription
+传说，数千年前圣帕特里克消灭了哞尔兰所有的蛇。然而，蛇们现在卷土重来了！圣帕特里克节是在每年的3月17日，所以小明要用彻底清除哞尔兰所有的蛇来,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-
-
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
-
-
-  
-  <div id="container">
-    <div id="wrap">
-      
-        <header>
-
-    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="navbar-inner">
-          
-          <div class="container"> 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            
-              <a class="brand" style="
-                 margin-top: 0px;"  
-                href="#" data-toggle="modal" data-target="#myModal" >
-                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
-              </a>
-            
-            
-            <div class="navbar-collapse collapse">
-              <ul class="hnav navbar-nav">
-                
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
-                
-                  <li><div id="search-form-wrap">
-
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-
-</div></li>
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">20190710 test</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
-          </div>
-                
-      </div>
+            <div id="qr"></div>
+        </div>
     </div>
+    <div class="scrollbar"></div>
+</div>
 
-</header>
-
-
-
-      
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">20190710 test</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
             
-      <div id="content" class="outer">
-        
-          <section id="main" style="float:none;"><article id="post-20190710test" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" class="article-title" itemprop="name">
-      20190710 test
-    </h1>
-  
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/dfs%E5%BA%8F/" rel="tag">dfs序</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/dp/" rel="tag">dp</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/" rel="tag">主席树</a></li></ul>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/09/05/20190710test/" class="article-date">
-	  <time datetime="2021-09-05T02:20:22.933Z" itemprop="datePublished">2021-09-05</time>
-	</a>
 
-      
-    <a class="article-category-link" href="/categories/test/">test</a>
-
-      
-	<a class="article-views">
-	<span id="busuanzi_container_page_pv">
-		PV:<span id="busuanzi_value_page_pv"></span>
-	</span>
-	</a>
-
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="20190710的test"><a href="#20190710的test" class="headerlink" title="20190710的test"></a>20190710的test</h1><h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a><font color=darkmagenta><strong>T1</strong></font></h2><h3 id="Desctription"><a href="#Desctription" class="headerlink" title="Desctription"></a><font color=1453ad><em>Desctription</em></font></h3><blockquote>
+        </div>
+        <div class="content markdown">
+            <h1 id="20190710的test"><a href="#20190710的test" class="headerlink" title="20190710的test"></a>20190710的test</h1><h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a><font color=darkmagenta><strong>T1</strong></font></h2><h3 id="Desctription"><a href="#Desctription" class="headerlink" title="Desctription"></a><font color=1453ad><em>Desctription</em></font></h3><blockquote>
 <p>传说，数千年前圣帕特里克消灭了哞尔兰所有的蛇。然而，蛇们现在卷土重来了！圣帕特里克节是在每年的3月17日，所以小明要用彻底清除哞尔兰所有的蛇来纪念圣帕特里克。小明装备了一个捕网，用来捕捉N组排成一行的蛇（1≤N≤400）。小明必须按照这些组在这一行中出现的顺序捕捉每一组的所有蛇。每当小明抓完一组蛇之后，她就会将蛇放在笼子里，然后带着空的捕网开始捕捉下一组。</p>
 <p>一个大小为s的捕网意味着小明可以抓住任意包含g条的一组蛇，其中g≤s。然而，每当小明用大小为s的捕网抓住了一组g条蛇，就意味着浪费了s−g的空间。小明可以任意设定捕网的初始大小，并且她可以改变K次捕网大小（1≤K&lt;N）。</p>
 <p>请告诉小明她捕捉完所有组的蛇之后可以达到的总浪费空间的最小值。</p>
@@ -199,7 +77,7 @@
 <h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a><font color=1453ad><em>Output</em></font></h3><blockquote>
 <p>输出最优的M。</p>
 </blockquote>
-<h3 id="Anlysis-1"><a href="#Anlysis-1" class="headerlink" title="Anlysis"></a><font color=1453ad><em>Anlysis</em></font></h3><p>考试的时候我没有想到可以来找规律!!!<br>$$<br>(20192019x+2019201949y)\mod 2019201997\\<br>=(-84x-48y)\mod 2019201997<br>$$<br>所以$y=N $,$x=K-1$时最大</p>
+<h3 id="Anlysis-1"><a href="#Anlysis-1" class="headerlink" title="Anlysis"></a><font color=1453ad><em>Anlysis</em></font></h3><p>考试的时候我没有想到可以来找规律!!!<br>$$<br>(2019201913x+2019201949y)\mod 2019201997\\<br>=(-84x-48y)\mod 2019201997<br>$$<br>所以$y=N $,$x=K-1$时最大</p>
 <h3 id="Codes-1"><a href="#Codes-1" class="headerlink" title="Codes"></a><font color=1453ad><em>Codes</em></font></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N,K;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;N,&amp;K);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="number">-84</span>*(K<span class="number">-1</span>)<span class="number">-48</span>*N+<span class="number">2019201997</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a><font color =darkmagenta><strong>T3</strong></font></h2><h3 id="Desctription-2"><a href="#Desctription-2" class="headerlink" title="Desctription"></a><font color=1453ad><em>Desctription</em></font></h3><blockquote>
@@ -237,290 +115,112 @@
 <h3 id="Codes-2"><a href="#Codes-2" class="headerlink" title="Codes"></a><font color=1453ad><em>Codes</em></font></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 600300</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Int64 long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N,Q;</span><br><span class="line"><span class="keyword">int</span> siz[maxn],dep[maxn],fa[maxn];</span><br><span class="line"><span class="keyword">int</span> head[maxn],to[maxn],nxt[maxn],tot=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> cnt=<span class="number">0</span>,s=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> dfn[maxn],Root[maxn];</span><br><span class="line"><span class="keyword">int</span> maxdep=<span class="number">0</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">nde</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> lch,rch;</span><br><span class="line">    Int64 data;</span><br><span class="line">&#125;sgt[maxn*<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span>&#123;</span><br><span class="line">    x=<span class="number">0</span>;<span class="keyword">int</span> sign=<span class="number">1</span>;<span class="keyword">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(c&lt;<span class="string">&#x27;0&#x27;</span>||c&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)sign=<span class="number">-1</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=x*<span class="number">10</span>+c<span class="number">-48</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">    x*=sign; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    to[++tot]=y;</span><br><span class="line">    nxt[tot]=head[x];</span><br><span class="line">    head[x]=tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;</span><br><span class="line">    siz[u]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=nxt[i])&#123;</span><br><span class="line">        <span class="keyword">int</span> v=to[i];</span><br><span class="line">        <span class="keyword">if</span>(!siz[v])&#123;</span><br><span class="line">            dep[v]=dep[u]+<span class="number">1</span>;</span><br><span class="line">            maxdep=<span class="built_in">max</span>(dep[v],maxdep);</span><br><span class="line">            fa[v]=u;</span><br><span class="line">            <span class="built_in">dfs</span>(v);</span><br><span class="line">            siz[u]+=siz[v];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> &amp;p,<span class="keyword">int</span> l,<span class="keyword">int</span> r,Int64 val,<span class="keyword">int</span> pur)</span></span>&#123;</span><br><span class="line">    sgt[++s]=sgt[p];</span><br><span class="line">    p=s;</span><br><span class="line">    sgt[p].data+=val;</span><br><span class="line">    <span class="keyword">if</span>(l==r)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(mid&gt;=pur)<span class="built_in">insert</span>(sgt[p].lch,l,mid,val,pur);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">insert</span>(sgt[p].rch,mid+<span class="number">1</span>,r,val,pur);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Int64 <span class="title">query</span><span class="params">(<span class="keyword">int</span> ver1,<span class="keyword">int</span> ver2,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==x&amp;&amp;r==y)<span class="keyword">return</span> sgt[ver2].data-sgt[ver1].data;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(mid&gt;=y)<span class="keyword">return</span> <span class="built_in">query</span>(sgt[ver1].lch,sgt[ver2].lch,l,mid,x,y);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(mid&lt;x) <span class="keyword">return</span> <span class="built_in">query</span>(sgt[ver1].rch,sgt[ver2].rch,mid+<span class="number">1</span>,r,x,y);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">query</span>(sgt[ver1].lch,sgt[ver2].lch,l,mid,x,mid)+<span class="built_in">query</span>(sgt[ver1].rch,sgt[ver2].rch,mid+<span class="number">1</span>,r,mid+<span class="number">1</span>,y);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs_</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;</span><br><span class="line">    dfn[u]=++cnt;</span><br><span class="line">    Root[cnt]=Root[cnt<span class="number">-1</span>];<span class="comment">//insert里面会给这个root赋值的 </span></span><br><span class="line">    <span class="built_in">insert</span>(Root[cnt],<span class="number">1</span>,maxdep,(Int64)siz[u]<span class="number">-1</span>,dep[u]);</span><br><span class="line">    <span class="comment">//因为是以dep作为下标来的，所以是1-maxdep</span></span><br><span class="line">    <span class="comment">//然后每一个深度相同的插入可以当作对这个的修改。 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=nxt[i])&#123;</span><br><span class="line">        <span class="keyword">int</span> v=to[i];</span><br><span class="line">        <span class="keyword">if</span>(v!=fa[u])<span class="built_in">dfs_</span>(v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;talk.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">    <span class="comment">//freopen(&quot;talk.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(N);<span class="built_in">read</span>(Q);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> x,y;</span><br><span class="line">        <span class="built_in">read</span>(x);<span class="built_in">read</span>(y);</span><br><span class="line">        <span class="built_in">add</span>(x,y);<span class="built_in">add</span>(y,x);</span><br><span class="line">    &#125; </span><br><span class="line">    dep[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">dfs_</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span>(Q--)&#123;</span><br><span class="line">        <span class="keyword">int</span> p,k;</span><br><span class="line">        <span class="built_in">read</span>(p);<span class="built_in">read</span>(k);</span><br><span class="line">        <span class="keyword">if</span>(dep[p]==maxdep)&#123;<span class="built_in">printf</span>(<span class="string">&quot;0\n&quot;</span>);<span class="keyword">continue</span>;&#125;</span><br><span class="line">        Int64 ans=<span class="number">0</span>;</span><br><span class="line">        ans+=(<span class="keyword">long</span> <span class="keyword">long</span>)(<span class="built_in">min</span>(k,dep[p]<span class="number">-1</span>))*(siz[p]<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">int</span> l=dfn[p]<span class="number">-1</span>,r=dfn[p]+siz[p]<span class="number">-1</span>;</span><br><span class="line">        ans+=<span class="built_in">query</span>(Root[l],Root[r],<span class="number">1</span>,maxdep,dep[p]+<span class="number">1</span>,<span class="built_in">min</span>(maxdep,dep[p]+k));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
     </div>
-    <footer class="article-footer">
-      
-      
-      <div>
-        <ul class="post-copyright">
-          <li class="post-copyright-author">
-          <strong>Post author:  </strong>Ddmiurge</a>
-          </li>
-          <li class="post-copyright-link">
-          <strong>Post link:  </strong>
-          <a href="/2021/09/05/20190710test/" target="_blank" title="20190710 test">http://example.com/2021/09/05/20190710test/</a>
-          </li>
-          <li class="post-copyright-license">
-            <strong>Copyright Notice:   </strong>
-            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-            unless stating additionally.
-          </li>
-         
-        </ul>
-<div>
-
-      
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
-
-      
-      
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dfs%E5%BA%8F/" rel="tag">dfs序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/" rel="tag">dp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/" rel="tag">主席树</a></li></ul>
-
-      
-
-    </footer>
-  </div>
-  
     
-<nav id="article-nav">
-  
-    <a href="/2021/09/05/20190709/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          20190709 test
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/09/05/20190712test/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">20190712的test</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-<!-- Table of Contents -->
-
-  <aside id="toc-sidebar">
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
-    
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#20190710%E7%9A%84test"><span class="nav-number">1.</span> <span class="nav-text">20190710的test</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#T1"><span class="nav-number">1.1.</span> <span class="nav-text">T1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desctription"><span class="nav-number">1.1.1.</span> <span class="nav-text">Desctription</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">1.1.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">1.1.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anlysis"><span class="nav-number">1.1.4.</span> <span class="nav-text">Anlysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Codes"><span class="nav-number">1.1.5.</span> <span class="nav-text">Codes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T2"><span class="nav-number">1.2.</span> <span class="nav-text">T2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desctription-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">Desctription</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anlysis-1"><span class="nav-number">1.2.4.</span> <span class="nav-text">Anlysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Codes-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">Codes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T3"><span class="nav-number">1.3.</span> <span class="nav-text">T3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desctription-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">Desctription</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anlysis-2"><span class="nav-number">1.3.4.</span> <span class="nav-text">Anlysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Codes-2"><span class="nav-number">1.3.5.</span> <span class="nav-text">Codes</span></a></li></ol></li></ol></li></ol>
-    
-    </div>
-  </aside>
-
-</section>
-        
-      </div>
-      
-      <footer id="footer">
-  
-
-  <div class="container">
-      	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
-	      
-	      
-    		<p class="busuanzi_uv">
-				UV : <span id="busuanzi_value_site_uv"></span> |  
-				PV : <span id="busuanzi_value_site_pv"></span>
-		    </p>
-  		   
-		</div>
-
-		
-  </div>
-</footer>
-
-
-<!-- min height -->
-
-<script>
-    var wrapdiv = document.getElementById("wrap");
-    var contentdiv = document.getElementById("content");
-    var allheader = document.getElementById("allheader");
-
-    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
-    if (allheader != null) {
-      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    } else {
-      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    }
-</script>
-    </div>
-    <!-- <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tags</a>
-  
-    <a href="/about" class="mobile-nav-link">About</a>
-  
-</nav> -->
-    
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/scripts.js"></script>
-
-
-
-
-
-  
-<script src="/js/dialog.js"></script>
-
-
-
-
-
-
-
-
-
-	<div style="display: none;">
-    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-  </div>
-
-
-
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-	</script>
-
-
-
-
-
-
-  </div>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
-      </div>
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-
-
-      <div class="modal-body">
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
-            </a>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            您已调整页面字体大小
-          </div>
-        </div>
-      
-
-
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
-            </a>
-        </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
-          </div>
-        </div>
-
-        <div>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        </div>
-         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            Ddmiurge&#39;s blog
-          </div>
-          <div class="panel-body">
-            Copyright © 2021 Ddmiurge All Rights Reserved.
-          </div>
-        </div>
-      </div>
-
-
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <div class="modal-footer">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-      </div>
-    </div>
-  </div>
 </div>
-  
-  <a id="rocket" href="#top" class=""></a>
-  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-  
-    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
-  
+
+
+    </div>
+</div>
 </body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 </html>

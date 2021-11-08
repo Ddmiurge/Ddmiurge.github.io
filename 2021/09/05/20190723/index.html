@@ -1,182 +1,58 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans" class="loading">
 <head>
-  <meta charset="utf-8">
-  
-  <title>20190723的test | Ddmiurge&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="keywords" content="图论SPFASLF优化数学" />
-  
-  
-  
-  
-  <meta name="description" content="20190723考试爆零记录">
-<meta property="og:type" content="article">
-<meta property="og:title" content="20190723的test">
-<meta property="og:url" content="http://example.com/2021/09/05/20190723/index.html">
-<meta property="og:site_name" content="Ddmiurge&#39;s blog">
-<meta property="og:description" content="20190723考试爆零记录">
-<meta property="og:locale">
-<meta property="article:published_time" content="2021-09-05T02:20:22.666Z">
-<meta property="article:modified_time" content="2021-09-05T02:20:23.443Z">
-<meta property="article:author" content="Ddmiurge">
-<meta property="article:tag" content="图论">
-<meta property="article:tag" content="SPFA">
-<meta property="article:tag" content="SLF优化">
-<meta property="article:tag" content="数学">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml">
-  
-
-  
-
-  <link rel="icon" href="/css/images/mylogo.jpg">
-  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <style type="text/css">
-    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
-    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
-}
-
-  </style>
-  
-<link rel="stylesheet" href="/css/style.css">
-
-
-  
-<script src="/js/jquery-3.1.1.min.js"></script>
-
-  
-<script src="/js/bootstrap.js"></script>
-
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css" >
-
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>20190723的test - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
     
-<link rel="stylesheet" href="/css/dialog.css">
-
-  
-
-  
-
-  
-    <link rel="stylesheet" href="/css/header-post.css" >
-  
-
-  
-  
-  
+    <meta name="description" content="TrafficDescription​    工人打算用一组传感器测量公路上的车流量，每个传感器被用来测量一小段路面上的车流量的数值。不幸的是，某一天装有传感器的盒子进了水，之后它们就不能精确的测量,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-
-
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
-
-
-  
-  <div id="container">
-    <div id="wrap">
-      
-        <header>
-
-    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="navbar-inner">
-          
-          <div class="container"> 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            
-              <a class="brand" style="
-                 margin-top: 0px;"  
-                href="#" data-toggle="modal" data-target="#myModal" >
-                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
-              </a>
-            
-            
-            <div class="navbar-collapse collapse">
-              <ul class="hnav navbar-nav">
-                
-                  <li> <a class="main-nav-link" href="/">Home</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
-                
-                  <li> <a class="main-nav-link" href="/about">About</a> </li>
-                
-                  <li><div id="search-form-wrap">
-
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="index.search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-
-</div></li>
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">20190723的test</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
-          </div>
-                
-      </div>
+            <div id="qr"></div>
+        </div>
     </div>
+    <div class="scrollbar"></div>
+</div>
 
-</header>
-
-
-
-      
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">20190723的test</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
             
-      <div id="content" class="outer">
-        
-          <section id="main" style="float:none;"><article id="post-20190723" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" class="article-title" itemprop="name">
-      20190723的test
-    </h1>
-  
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/SLF%E4%BC%98%E5%8C%96/" rel="tag">SLF优化</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/SPFA/" rel="tag">SPFA</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li></ul>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/09/05/20190723/" class="article-date">
-	  <time datetime="2021-09-05T02:20:22.666Z" itemprop="datePublished">2021-09-05</time>
-	</a>
 
-      
-    <a class="article-category-link" href="/categories/test/">test</a>
-
-      
-	<a class="article-views">
-	<span id="busuanzi_container_page_pv">
-		PV:<span id="busuanzi_value_page_pv"></span>
-	</span>
-	</a>
-
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Traffic"><a href="#Traffic" class="headerlink" title="Traffic"></a><font color=darkmagenta><em>Traffic</em></font></h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a><font color=1453ad><em>Description</em></font></h3><p>​    工人打算用一组传感器测量公路上的车流量，每个传感器被用来测量一小段路面上的车流量的数值。不幸的是，某一天装有传感器的盒子进了水，之后它们就不能精确的测量了。现在每个传感器只能输出一个可能结果的范围。例如，一个传感器可能会给出范围[7,13]，表示在这段路面上的车流量不小于7，并且不大于13。</p>
+        </div>
+        <div class="content markdown">
+            <h2 id="Traffic"><a href="#Traffic" class="headerlink" title="Traffic"></a><font color=darkmagenta><em>Traffic</em></font></h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a><font color=1453ad><em>Description</em></font></h3><p>​    工人打算用一组传感器测量公路上的车流量，每个传感器被用来测量一小段路面上的车流量的数值。不幸的是，某一天装有传感器的盒子进了水，之后它们就不能精确的测量了。现在每个传感器只能输出一个可能结果的范围。例如，一个传感器可能会给出范围[7,13]，表示在这段路面上的车流量不小于7，并且不大于13。</p>
 <p>​    高速路要测量的这一段长N英里，当然高速路都是单向的，从第1英里驶向第N英里。工人想要安装N个传感器——每个监测1英里长的路段。在其中某些路段上，有能够使得车辆进入高速公路的上匝道，在这样的路段上，工人会将传感器装在上匝道上，测量流入的车流量。在某些路段上有能够使得车辆离开高速公路的下匝道，在这样的路段上，工人会将传感器装在下匝道上。每一个路段包含至多一个匝道。如果在公路的一个路段上没有上匝道或下匝道，工人就将传感器装在高速公路的主路上。</p>
 <p>​    给定N个传感器的读数，请求出在高速公路第1英里之前和第N英里之后车流量的最为准确的可能范围。这些范围应当与所有N个传感器的读数相一致。</p>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><font color=1453ad><em>Input</em></font></h3><p>​    输入的第一行包含N（1≤N≤100）。余下N行每行按从第1英里至第N英里的顺序描述一段1英里长的路段。每行包含一个字符串，为”on”（如果这段路上有一个上匝道），”off”（如果这段路上有一个下匝道），或者是”none”（如果这段路上没有匝道），然后是两个范围为0…1000的整数，表示这段路上的传感器的读数所给出的下界、上界。至少一个高速公路路段的描述会是”none”。</p>
@@ -204,290 +80,112 @@
 <h3 id="Codes-2"><a href="#Codes-2" class="headerlink" title="Codes"></a><font color=1453ad><em>Codes</em></font></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 25005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxe 50005 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Int64 long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max(x,y) (x&gt;y)?x:y</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(x,y) (x&lt;y)?x:y</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> head[maxn],to[maxe&lt;&lt;<span class="number">2</span>],nxt[maxe&lt;&lt;<span class="number">2</span>],wel[maxe&lt;&lt;<span class="number">2</span>],tot=<span class="number">0</span>;;</span><br><span class="line">Int64 dis[maxn];<span class="keyword">int</span> N,R,P,S;<span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="keyword">int</span> dfn[maxn],low[maxn],dfst=<span class="number">0</span>,stk[maxn],top=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> block[maxn],cnt=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> t&gt;<span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(t &amp;x)</span></span>&#123;</span><br><span class="line">	x=<span class="number">0</span>;<span class="keyword">int</span> sign=<span class="number">1</span>;<span class="keyword">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(c&lt;<span class="string">&#x27;0&#x27;</span>||c&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)sign=<span class="number">-1</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">	<span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=x*<span class="number">10</span>+c<span class="number">-48</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">	x*=sign;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span>&#123;</span><br><span class="line">	to[++tot]=y;</span><br><span class="line">	nxt[tot]=head[x];</span><br><span class="line">	head[x]=tot;</span><br><span class="line">	wel[tot]=z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;</span><br><span class="line">	dfn[u]=low[u]=++dfst;</span><br><span class="line">	stk[++top]=u;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=nxt[i])&#123;</span><br><span class="line">		<span class="keyword">int</span> v=to[i];</span><br><span class="line">		<span class="keyword">if</span>(!dfn[v])&#123;</span><br><span class="line">			<span class="built_in">tarjan</span>(v);</span><br><span class="line">			low[u]=<span class="built_in">min</span>(low[u],low[v]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(!block[v])&#123;</span><br><span class="line">			low[u]=<span class="built_in">min</span>(dfn[v],low[u]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(low[u]==dfn[u])&#123;</span><br><span class="line">		block[u]=++cnt;</span><br><span class="line">		<span class="keyword">while</span>(stk[top]!=u)&#123;</span><br><span class="line">			block[stk[top]]=cnt;</span><br><span class="line">			top--;</span><br><span class="line">		&#125;</span><br><span class="line">		top--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SPFA</span><span class="params">(<span class="keyword">int</span> R,<span class="keyword">int</span> w)</span></span>&#123;</span><br><span class="line">	deque&lt;<span class="keyword">int</span>&gt;D;</span><br><span class="line">	dis[R]=w;</span><br><span class="line">	vis[R]=<span class="literal">true</span>;</span><br><span class="line">	D.<span class="built_in">push_front</span>(R);</span><br><span class="line">	<span class="keyword">while</span>(!D.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		<span class="keyword">int</span> u=D.<span class="built_in">front</span>();D.<span class="built_in">pop_front</span>();</span><br><span class="line">		vis[u]=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=nxt[i])&#123;</span><br><span class="line">			<span class="keyword">int</span> v=to[i],w=wel[i];</span><br><span class="line">			<span class="keyword">if</span>(dis[v]&gt;dis[u]+w)&#123;</span><br><span class="line">				dis[v]=dis[u]+w;</span><br><span class="line">				<span class="keyword">if</span>(!vis[v])&#123;</span><br><span class="line">					<span class="keyword">if</span>(D.<span class="built_in">size</span>()&amp;&amp;dis[v]&lt;=dis[D.<span class="built_in">front</span>()])D.<span class="built_in">push_front</span>(v);</span><br><span class="line">					<span class="keyword">else</span> D.<span class="built_in">push_back</span>(v);</span><br><span class="line">					vis[v]=<span class="literal">true</span>;</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;						</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;airline.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">	<span class="built_in">freopen</span>(<span class="string">&quot;airline.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	<span class="built_in">read</span>(N);<span class="built_in">read</span>(R);<span class="built_in">read</span>(P);<span class="built_in">read</span>(S);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=R;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> x,y,z;<span class="built_in">read</span>(x);<span class="built_in">read</span>(y);<span class="built_in">read</span>(z);</span><br><span class="line">		<span class="built_in">add</span>(x,y,z);<span class="built_in">add</span>(y,x,z);</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=P;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> x,y,z;<span class="built_in">read</span>(x);<span class="built_in">read</span>(y);<span class="built_in">read</span>(z);</span><br><span class="line">		<span class="built_in">add</span>(x,y,z);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">tarjan</span>(S);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">memset</span>(dis,<span class="number">0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dis));</span><br><span class="line">	<span class="built_in">SPFA</span>(S,<span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(dis[i]==<span class="number">0x3f3f3f3f3f3f3f3f</span>l)<span class="built_in">printf</span>(<span class="string">&quot;NO PATH\n&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,dis[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">fclose</span>(stdin);</span><br><span class="line">	<span class="built_in">fclose</span>(stdout);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
     </div>
-    <footer class="article-footer">
-      
-      
-      <div>
-        <ul class="post-copyright">
-          <li class="post-copyright-author">
-          <strong>Post author:  </strong>Ddmiurge</a>
-          </li>
-          <li class="post-copyright-link">
-          <strong>Post link:  </strong>
-          <a href="/2021/09/05/20190723/" target="_blank" title="20190723的test">http://example.com/2021/09/05/20190723/</a>
-          </li>
-          <li class="post-copyright-license">
-            <strong>Copyright Notice:   </strong>
-            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-            unless stating additionally.
-          </li>
-         
-        </ul>
-<div>
-
-      
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
-
-      
-      
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SLF%E4%BC%98%E5%8C%96/" rel="tag">SLF优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SPFA/" rel="tag">SPFA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li></ul>
-
-      
-
-    </footer>
-  </div>
-  
     
-<nav id="article-nav">
-  
-    <a href="/2021/09/05/20190712test/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          20190712的test
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/09/05/20190820test/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">20190820test</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-<!-- Table of Contents -->
-
-  <aside id="toc-sidebar">
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
-    
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Traffic"><span class="nav-number">1.</span> <span class="nav-text">Traffic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">1.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">1.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis"><span class="nav-number">1.4.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Codes"><span class="nav-number">1.5.</span> <span class="nav-text">Codes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Paint"><span class="nav-number">2.</span> <span class="nav-text">Paint</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-1"><span class="nav-number">2.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-1"><span class="nav-number">2.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis-1"><span class="nav-number">2.4.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Codes-1"><span class="nav-number">2.5.</span> <span class="nav-text">Codes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airline"><span class="nav-number">3.</span> <span class="nav-text">Airline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-2"><span class="nav-number">3.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-2"><span class="nav-number">3.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis-2"><span class="nav-number">3.4.</span> <span class="nav-text">Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="nav-number">3.4.1.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SLF%E4%BC%98%E5%8C%96"><span class="nav-number">3.4.2.</span> <span class="nav-text">SLF优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Codes-2"><span class="nav-number">3.5.</span> <span class="nav-text">Codes</span></a></li></ol></li></ol>
-    
-    </div>
-  </aside>
-
-</section>
-        
-      </div>
-      
-      <footer id="footer">
-  
-
-  <div class="container">
-      	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Ddmiurge&#39;s blog All Rights Reserved.</p>
-	      
-	      
-    		<p class="busuanzi_uv">
-				UV : <span id="busuanzi_value_site_uv"></span> |  
-				PV : <span id="busuanzi_value_site_pv"></span>
-		    </p>
-  		   
-		</div>
-
-		
-  </div>
-</footer>
-
-
-<!-- min height -->
-
-<script>
-    var wrapdiv = document.getElementById("wrap");
-    var contentdiv = document.getElementById("content");
-    var allheader = document.getElementById("allheader");
-
-    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
-    if (allheader != null) {
-      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    } else {
-      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    }
-</script>
-    </div>
-    <!-- <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tags</a>
-  
-    <a href="/about" class="mobile-nav-link">About</a>
-  
-</nav> -->
-    
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/scripts.js"></script>
-
-
-
-
-
-  
-<script src="/js/dialog.js"></script>
-
-
-
-
-
-
-
-
-
-	<div style="display: none;">
-    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-  </div>
-
-
-
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-	</script>
-
-
-
-
-
-
-  </div>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
-      </div>
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-
-
-      <div class="modal-body">
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
-            </a>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            您已调整页面字体大小
-          </div>
-        </div>
-      
-
-
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
-            </a>
-        </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
-          </div>
-        </div>
-
-        <div>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        </div>
-         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            Ddmiurge&#39;s blog
-          </div>
-          <div class="panel-body">
-            Copyright © 2021 Ddmiurge All Rights Reserved.
-          </div>
-        </div>
-      </div>
-
-
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <div class="modal-footer">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-      </div>
-    </div>
-  </div>
 </div>
-  
-  <a id="rocket" href="#top" class=""></a>
-  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-  
-    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
-  
+
+
+    </div>
+</div>
 </body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 </html>
