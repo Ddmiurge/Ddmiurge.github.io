@@ -1267,7 +1267,7 @@
   <entry>
     <title>LGP2471</title>
     <url>/2021/11/17/LGP2471/</url>
-    <content><![CDATA[<h1 id="LGP2471-P2471-SCOI2007-降雨量-洛谷-计算机科学教育新生态-luogu-com-cn"><a href="#LGP2471-P2471-SCOI2007-降雨量-洛谷-计算机科学教育新生态-luogu-com-cn" class="headerlink" title="[LGP2471]([P2471 SCOI2007]降雨量 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn))"></a>[LGP2471]([P2471 <a href="https://www.luogu.com.cn/problem/P2471">SCOI2007]降雨量 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a>)</h1><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a><font color=darkmagenta><strong>Analysis</strong></font></h2><p>​    这道题要算到区间的最大值，而且又不需要进行修改，所以说就直接联想到了用ST表来对区间的最大值进行求解。</p>
+    <content><![CDATA[<h1 id="LGP2471"><a href="#LGP2471" class="headerlink" title="LGP2471"></a><a href="https://www.luogu.com.cn/problem/P2471">LGP2471</a></h1><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a><font color=darkmagenta><strong>Analysis</strong></font></h2><p>​    这道题要算到区间的最大值，而且又不需要进行修改，所以说就直接联想到了用ST表来对区间的最大值进行求解。</p>
 <p>​    我们假设左边的年限$x$对应的序号为$l$,右边$y$为$r$,因为年限是按照顺序输入的，所以说可以直接用lower_bound进行查找，分成四种情况处理</p>
 <ul>
 <li><p>左右区间的降水量都未知</p>
@@ -1319,7 +1319,7 @@
   <entry>
     <title>LGP4588</title>
     <url>/2021/11/17/LGP4588/</url>
-    <content><![CDATA[<h1 id="LGP4588-P4588-TJOI2018-数学计算-洛谷-计算机科学教育新生态-luogu-com-cn"><a href="#LGP4588-P4588-TJOI2018-数学计算-洛谷-计算机科学教育新生态-luogu-com-cn" class="headerlink" title="[LGP4588]([P4588 TJOI2018]数学计算 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn))"></a>[LGP4588]([P4588 <a href="https://www.luogu.com.cn/problem/P4588">TJOI2018]数学计算 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a>)</h1><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a><font color=darkmagenta><strong>Analysis</strong></font></h2><p>​    最开始拿到这一道题目的时候第一个反应是暴力求解问题。遇见除法的时候就直接乘上逆元来取模</p>
+    <content><![CDATA[<h1 id="LGP4588"><a href="#LGP4588" class="headerlink" title="LGP4588"></a><a href="https://www.luogu.com.cn/problem/P4588">LGP4588</a></h1><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a><font color=darkmagenta><strong>Analysis</strong></font></h2><p>​    最开始拿到这一道题目的时候第一个反应是暴力求解问题。遇见除法的时候就直接乘上逆元来取模</p>
 <p>​    但是$\exist x, ax\equiv1(mod\ n)\iff gcd(a,n)=1$</p>
 <blockquote>
 <p>对于每一组输入，第一行是两个数字 Q,M</p>
