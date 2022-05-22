@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>数据结构笔记 - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="description" content="[TOC]
+写在前面​    寒假看看数据结构的网课当作复习吧，随便写了一些笔记
+概念小结123456789101112131415161718graph LR;数据--个体--&amp;gt;数据元素;数,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">数据结构笔记</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">数据结构笔记</h1>
+        <div class="stuff">
+            <span>一月 17, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" rel="tag">哈夫曼树</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%9B%BE/" rel="tag">图</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="tag">排序算法</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%A0%88/" rel="tag">栈</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%A0%91/" rel="tag">树</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>[TOC]</p>
+<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><font color=darkmagenta><strong>写在前面</strong></font></h1><p>​    寒假看看数据结构的网课当作复习吧，随便写了一些笔记</p>
+<h2 id="概念小结"><a href="#概念小结" class="headerlink" title="概念小结"></a><font color=1453ad><strong>概念小结</strong></font></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">数据--个体--&gt;数据元素;</span><br><span class="line">数据元素--性质相同的构成的集合--&gt;数据对象;</span><br><span class="line">数据元素--加上数据元素之间的关系--&gt;数据结构;</span><br><span class="line">数据结构--映像到内存--&gt;存储结构;</span><br><span class="line">数据结构--加上操作--&gt;抽象数据类型;</span><br><span class="line">数据结构--逻辑模型--&gt;逻辑结构;</span><br><span class="line">逻辑结构--&gt;集合结构;</span><br><span class="line">逻辑结构--&gt;线性结构;</span><br><span class="line">逻辑结构--&gt;树形结构;</span><br><span class="line">逻辑结构--&gt;图形结构;</span><br><span class="line">抽象数据类型--&gt;数据对象;</span><br><span class="line">抽象数据类型--&gt;数据类型;</span><br><span class="line">抽象数据类型--&gt;基本操作;</span><br><span class="line">存储结构--&gt;顺序结构;</span><br><span class="line">存储结构--&gt;链式结构;</span><br><span class="line">存储结构--&gt;索引结构;</span><br><span class="line">存储结构--&gt;散列结构;</span><br></pre></td></tr></table></figure>
+
+<p>逻辑结构：研究对象之间的特性和关系；</p>
+<p>存储结构：有效组织计算机进行存储</p>
+<p>算法五个特性：</p>
+<ul>
+<li>有穷性：经过有穷步可以结束</li>
+<li>确定性：每一条指令必须有确切的含义，没有二义性</li>
+<li>可行性：可以执行的</li>
+<li>输入</li>
+<li>输出</li>
+</ul>
+<p>算法设计要求：</p>
+<ul>
+<li>正确性</li>
+<li>可读性</li>
+<li>健壮性</li>
+<li>高效性 </li>
+</ul>
+<h1 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a><font color=darkmagenta><strong>栈和队列</strong></font></h1><h2 id="定义和特点"><a href="#定义和特点" class="headerlink" title="定义和特点"></a><font color=1453ad><strong>定义和特点</strong></font></h2><ul>
+<li><p>栈特点：后进先出（LIFO）</p>
+</li>
+<li><p>队列特点：先进先出（FIFO</p>
+</li>
+</ul>
+<h2 id="使用案例"><a href="#使用案例" class="headerlink" title="使用案例"></a><font color=1453ad><strong>使用案例</strong></font></h2><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a><font color=2a9678><strong>进制转换</strong></font></h3><blockquote>
+<p>将十进制数159转换成八进制数</p>
+</blockquote>
+<p>短除法余数分别依次是$7，3，2$，每一次得到余数的时候放入栈中，然后将栈中元素依次弹出可以得到八进制数$237$</p>
+<h3 id="括号匹配"><a href="#括号匹配" class="headerlink" title="括号匹配"></a><font color=2a9678><strong>括号匹配</strong></font></h3><blockquote>
+<p>假设表达式中有[],()两种括号，括号可以嵌套，但是顺序不可以出错。比如([] ())是合法的，但是([)]不合法</p>
+</blockquote>
+<p>按照顺序依次push进入栈中，如果和下面的匹配就弹出，如果出现交叉的情况说明不匹配。</p>
+<h3 id="表达式求值"><a href="#表达式求值" class="headerlink" title="表达式求值"></a><font color=2a9678><strong>表达式求值</strong></font></h3><p>算法有限算法</p>
+<p>把表达式分为：</p>
+<ul>
+<li>操作数： 常数，变量</li>
+<li>运算符： 算术运算符，逻辑运算符，关系运算符</li>
+<li>界限符： 左右括号和表达式结束符</li>
+</ul>
+<p>设置两个栈，一个是算符栈，另一个是操作数栈</p>
+<p>从左至右开始扫描表达式：</p>
+<ul>
+<li><p>如果是数：压入操作数栈</p>
+</li>
+<li><p>如果是运算符：</p>
+<ul>
+<li>优先级高于运算符栈顶的优先级，入栈并继续向后扫描</li>
+<li>优先级低于运算符栈顶的优先级，从操作数栈弹出两个运算数，弹出栈顶运算符，并进行运算，并将结果压栈进入操作数栈</li>
+</ul>
+</li>
+<li><p>继续进行扫描</p>
+</li>
+</ul>
+<h3 id="舞伴问题"><a href="#舞伴问题" class="headerlink" title="舞伴问题"></a><font color=2a9678><strong>舞伴问题</strong></font></h3><blockquote>
+<p>舞会上男女各自拍成一列，开始时从队头出来配对跳舞，跳完了过后自己排到后面去。</p>
+</blockquote>
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a><font color=darkmagenta><strong>树</strong></font></h1><ul>
+<li>二叉树和树是两个概念，因为树的结点的孩子不分左右</li>
+<li>假设二叉树叶子节点个数为$N_0$,有两个孩子的节点个数为$N_2$,则$N_0=N_2+1$</li>
+</ul>
+<p>$$<br>设节点数为N,两个孩子的节点数为N_2,一个的为N_1,没有的为N_0\<br>边数:\<br>N-1=N_2+N_1+N_0-1=2*N_2+N_1\<br>化简可得<br>$$</p>
+<ul>
+<li><p>满二叉树：一个深度为$k$且有$2^k-1$个结点的二叉树</p>
+</li>
+<li><p>完全二叉树：深度为$k$的具有$n$个节点的二叉树，当且仅当每一个节点都与深度为$k$的满二叉树从上到下，从左到右编号1到$n$对应的时候，称作完全二叉树。其深度为$\lfloor log_2n\rfloor+1$</p>
+</li>
+<li><p>完全二叉树节点$ib $的父亲$\lfloor i/2\rfloor$,儿子$2<em>i,2</em>i+1$</p>
+</li>
+<li><p>先序遍历:根左右；中序遍历：左根右；后序遍历：左右根</p>
+</li>
+<li><p>如果二叉树各节点均不同，则三种遍历的序列都唯一</p>
+</li>
+<li><p>如果知道先序遍历和中序遍历，或者后序遍历和中序遍历，则可以确定唯一的二叉树。已知先序/后序，中序，确定子树的时候，通过先序/后序确定子树的根，通过中序确定左右。</p>
+</li>
+<li><p>线索二叉树：我选择把这篇文章贴上来<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/134184036">#图解 数据结构：轻松搞定线索二叉树 - 知乎 </a></p>
+</li>
+<li><p>树转换成二叉树：从上到下，当前节点孩子放在该节点的左子树，兄弟放在右子树</p>
+</li>
+<li><p>二叉树转换成树：左孩子的的右孩子连接到双亲，删除原来的右孩子的线</p>
+</li>
+<li><p>二叉树转换成森林：从根节点开始，顺着将和右孩子的连线抹掉，再把每一个二叉树再进行还原。</p>
+</li>
+<li><p>哈夫曼树：最优二叉树，带权路径长度最短的树</p>
+<ul>
+<li>构造方法：先构造N个二叉树，每个都只有一个节点，选择权值最小的两个节点作为左右子树构成一个新的树，权值设为两个节点权值之和，然后在森林之中删除掉原来的两个节点，再把新的树放入到森林当中</li>
+<li></li>
+<li>特点：经过$N-1$次合并形成，有$2N-1$条边，且每个分支节点度都为2。</li>
+</ul>
+</li>
+</ul>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a><font color=darkmagenta><strong>图</strong></font></h1><h2 id="定义和术语"><a href="#定义和术语" class="headerlink" title="定义和术语"></a><font color=1453ad><strong>定义和术语</strong></font></h2><ul>
+<li><p>图：G=(V,E)</p>
+<ul>
+<li>V(Vertex):顶点（数据元素）的非空有穷集合 </li>
+</ul>
+<ul>
+<li>E(Edge):边的有穷集合</li>
+</ul>
+</li>
+<li><p>根据是否每条边有方向分为有向图，无向图</p>
+</li>
+<li><p>任意两个点都有边叫做<strong>完全图</strong>(有向图是两个点之间有两条边)</p>
+</li>
+<li><p>有向图的边也叫做弧</p>
+</li>
+<li><p>边的数目很少($\leq nlogn$)叫做稀疏图</p>
+</li>
+<li><p>边较多的叫做稠密图</p>
+</li>
+<li><p>网：边带权的图</p>
+</li>
+<li><p>邻接：有边相连的两个顶点之间联系</p>
+</li>
+<li><p>$(v_i,v_j)表示无向边，v_i邻接v_j,&lt;v_i,v_j&gt;表示有v_i到v_j的一条有向边，称作v_i邻接到v_j或者v_j邻接于v_i$</p>
+</li>
+<li><p>关联（依附）:边和顶点的关系</p>
+</li>
+<li><p>顶点的度：和顶点相关联的边的数目（有向图称出度入度）</p>
+</li>
+<li><p>路径：连续的边构成的顶点序列</p>
+</li>
+<li><p>路径长度：路径上的边的权值之和</p>
+</li>
+<li><p>回路：第一个顶点和最后一个顶点相同的路径</p>
+</li>
+<li><p>简单路径：除了起点终点可以相同外，其他顶点均不相同</p>
+</li>
+<li><p>连通图：在图中，任意两个顶点之间存在路径成为连通图（有向图则成为强连通图）</p>
+</li>
+<li><p>连通分量：无向图的极大连通子图称为其的<strong>连通分量</strong>(有向图叫做<strong>强连通分量</strong>)</p>
+</li>
+<li><p>生成树：包含无向图所有顶点的极小连通子图</p>
+</li>
+<li><p>生成森林：对于非连通图，由各个连通分量的生成树的集合</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='95008c389b2d7760afe1'
+        data-cs=''
+        data-r='博客评论'
+        data-o='Ddmiurge'
+        data-a='Ddmiurge'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
