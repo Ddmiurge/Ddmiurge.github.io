@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>概率和期望入门 - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="description" content="概率与期望期望概率这一个词语在生活中实际上是经常会碰见的，所以说这里我就来说一说相对而言遇到的要少一些的期望。这个期望啊，可以理解为某些事件大量发生以后的平均的结果。这就好比一个六面的色子扔了很多很,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">概率和期望入门</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">概率和期望入门</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%90%AC%E8%BF%90%E8%87%AA%E6%97%A7%E5%8D%9A%E5%AE%A2/" rel="tag">搬运自旧博客</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B/" rel="tag">概率期望</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="概率与期望"><a href="#概率与期望" class="headerlink" title="概率与期望"></a><font color=blue>概率与期望</font></h1><h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>概率这一个词语在生活中实际上是经常会碰见的，所以说这里我就来说一说相对而言遇到的要少一些的期望。这个期望啊，可以理解为<font color=red><strong>某些事件大量发生以后的平均的结果</strong></font>。这就好比一个六面的色子扔了很多很多次以后，色子平均值会趋近于<code>3.5</code>。<s>这个原因啊，是显而易见，毫无疑问的，就不需要再多解释了</s>。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>好的，有一道例题可以看看<br><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/P4316">洛谷P4316</a><br>这一道题啊，读完了我就想到了拓扑排序，，同时用两个变长数组来存就可以了<s>最开始我想用边集，可是我不知道怎么用边集来拓扑排序啊，于是ZhuFN大佬提醒我用两个变长数组</s>。因此，我们只需要用两个变长数组，一个<font color=red>用来存点</font>,一个用来<font color=red>存权值</font>就OK了。<br>而这一个拓扑排序的过程中，相对与普通的拓扑排序，增加上对于期望长度的累加就可以了这是因为期望具有可加性<br>$probab(u)$来的那一个点的期望长度，<code>w</code>为这一条边的权值，$outdgr(v)$为有几条路进来，那么可以得到<br>$$<br>probab(v)=[probab(u)+w]/outdgr(v)<br>$$<br>我们这里可采用正着来或反着来（应该是吧），就像是$USACO$的数字金字塔一样吧</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 100005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">queue&lt;<span class="keyword">int</span>&gt; Q;			</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;G[maxn];</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;W[maxn];</span><br><span class="line"><span class="keyword">int</span> n,tmp=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> indgr[maxn];</span><br><span class="line"><span class="keyword">int</span> outdgr[maxn];</span><br><span class="line"><span class="keyword">double</span> probab[maxn];</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">topsort</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Q.<span class="built_in">push</span>(n);</span><br><span class="line">    <span class="keyword">while</span>(!(Q.<span class="built_in">empty</span>()))&#123;</span><br><span class="line">        <span class="keyword">int</span> u=Q.<span class="built_in">front</span>();</span><br><span class="line">        Q.<span class="built_in">pop</span>();</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt;::iterator iterG=G[u].<span class="built_in">begin</span>();</span><br><span class="line">        vector&lt;<span class="keyword">int</span>&gt;::iterator iterW=W[u].<span class="built_in">begin</span>();</span><br><span class="line">        <span class="keyword">while</span>(iterG!=G[u].<span class="built_in">end</span>())&#123;</span><br><span class="line">            <span class="keyword">int</span> v=*iterG,w=*iterW;</span><br><span class="line">            indgr[v]--;</span><br><span class="line">            probab[v]+=(probab[u]+w)/(outdgr[v]);</span><br><span class="line">            <span class="keyword">if</span>(!indgr[v])&#123;</span><br><span class="line">                Q.<span class="built_in">push</span>(v);</span><br><span class="line">            &#125;</span><br><span class="line">            iterW++;iterG++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(indgr,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(indgr));</span><br><span class="line">    <span class="built_in">memset</span>(outdgr,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(outdgr));</span><br><span class="line">    <span class="built_in">memset</span>(probab,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(probab));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">        indgr[a]++;outdgr[a]++;</span><br><span class="line">        G[b].<span class="built_in">push_back</span>(a);</span><br><span class="line">        W[b].<span class="built_in">push_back</span>(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">topsort</span>();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>,probab[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里再附上另外的大佬这道题的链接，我是看了dyx大佬代码以后才发现自己累加的地方做错了的<s>对，没错，我最开始错了</s>,而 ZhuFN则是用的dfs做的。<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/saitoasuka/p/10337553.html">dyx</a><br><a target="_blank" rel="noopener" href="http://buringstraw.win/index.php/archives/21/">zfn</a><br>那么就可以了</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='95008c389b2d7760afe1'
+        data-cs=''
+        data-r='博客评论'
+        data-o='Ddmiurge'
+        data-a='Ddmiurge'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B"><span class="toc-number">1.</span> <span class="toc-text">概率与期望</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B"><span class="toc-number">1.1.</span> <span class="toc-text">期望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">例题</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>

@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>矩阵 - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="description" content="
+
+
+用矩阵来祭我的第一篇博客感谢朱枫苓，WYX大佬为本人博客的建设做出的巨大贡献再次特别发出大佬博客的地址，表示我对与朱枫苓大佬的敬佩大佬自己的博客大佬在博客园的博客
+好了，来看看矩阵
+
+加法。只,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">矩阵</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">矩阵</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%90%AC%E8%BF%90%E8%87%AA%E6%97%A7%E5%8D%9A%E5%AE%A2/" rel="tag">搬运自旧博客</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag">矩阵</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <span id="more"></span>
+
+
+<h1 id="用矩阵来祭我的第一篇博客"><a href="#用矩阵来祭我的第一篇博客" class="headerlink" title="用矩阵来祭我的第一篇博客"></a>用矩阵来祭我的第一篇博客</h1><p>感谢朱枫苓，WYX大佬为本人博客的建设做出的巨大贡献<br>再次特别发出大佬博客的地址，表示我对与朱枫苓大佬的敬佩<br><a target="_blank" rel="noopener" href="http://buringstraw.win/">大佬自己的博客</a><br><a target="_blank" rel="noopener" href="https://cnblogs.com/buringstraw/">大佬在博客园的博客</a></p>
+<p>好了，来看看矩阵</p>
+<ol>
+<li>加法。只有同型的矩阵才可以相加，对应的位置上面相加就可以了。</li>
+<li>数乘。把一个矩阵拿来和一个常数相乘，每一位都乘上来就行了，没有什么多的了。</li>
+<li>倒置。直接行列倒过来就行了。还有一个定理：A*B的倒置等于A的倒置乘以B的倒置</li>
+</ol>
+<p>然后就到了重点了</p>
+<h2 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a><font color=darkMagenta><strong>乘法</strong></font></h2><p>矩阵乘法$A*B$ 可以做乘法的条件是A的列数要等于B的行数 然后呢乘法就是A的第几行和B的第几列对应相乘累加就是答案第几几的位置的值了。这个矩阵啊，作用非常的大，配合快速幂，可以加速状态转移，实现很多的骚操作。 下面让我们看看矩阵是如何骚操作斐波那契数列的</p>
+<p><strong>题目背景</strong></p>
+<p>大家都知道，斐波那契数列是满足如下性质的一个数列：</p>
+<ul>
+<li><p>$f(1) = 1$</p>
+</li>
+<li><p> $f(2) = 1$</p>
+</li>
+<li><p>$f(n) = f(n-1) + f(n-2) (n ≥ 2 且 n 为整数)$</p>
+</li>
+</ul>
+<p><strong>题目描述</strong></p>
+<p>请你求出$ f(n) mod 1000000007$ 的值。</p>
+<p>设一个有两个元素的$1*2$的矩阵 $A[n]=[f(n),f(n-1)]$然后这样的话$A[n-1]=[f(n-1),f(n-2)]$那么的设话 $A[n-1]*B=A[n]$  ,易得  B为<br>$$<br>\begin{bmatrix}<br>1&amp;1\<br>1&amp;0<br>\end{bmatrix}<br>$$</p>
+<p> 则 $f(n)$ 为  $A[1][1]*(B 的 n 次方时的第二个元素）$</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Matrix F[n]=&#123;f[n],f[n-1]&#125;</span></span><br><span class="line"><span class="comment">//A=&#123;1,1</span></span><br><span class="line"><span class="comment">//   1,0&#125;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll A[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> ll Mod=<span class="number">1000000007</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(ll *a,ll b[<span class="number">2</span>][<span class="number">2</span>])</span></span>&#123;</span><br><span class="line">    ll tmp[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">memset</span>(tmp,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(tmp));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">1</span>;j++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=<span class="number">1</span>;k++)&#123;</span><br><span class="line">            (tmp[j]+=(a[k]*b[k][j]))%=Mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memcpy</span>(a,tmp,<span class="built_in"><span class="keyword">sizeof</span></span>(tmp));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mulsel</span><span class="params">(ll (*f)[<span class="number">2</span>])</span></span>&#123;</span><br><span class="line">    ll tmp[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">memset</span>(tmp,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(tmp));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">1</span>;j++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=<span class="number">1</span>;k++)&#123;</span><br><span class="line">                (tmp[i][j]+=(f[i][k]*f[k][j]))%=Mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memcpy</span>(f,tmp,<span class="built_in"><span class="keyword">sizeof</span></span>(tmp));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">pw</span><span class="params">(ll b)</span></span>&#123;</span><br><span class="line">    ll ans[<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>)<span class="built_in">mul</span>(ans,A);</span><br><span class="line">        <span class="built_in">mulsel</span>(A);</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans[<span class="number">1</span>];</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;input.txt&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;output.txt&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    A[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;A[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    A[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">1</span>;A[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">0</span>; </span><br><span class="line">    ll k;</span><br><span class="line">    cin&gt;&gt;k;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,<span class="built_in">pw</span>(k));<span class="comment">//快速幂 </span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='95008c389b2d7760afe1'
+        data-cs=''
+        data-r='博客评论'
+        data-o='Ddmiurge'
+        data-a='Ddmiurge'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E7%9F%A9%E9%98%B5%E6%9D%A5%E7%A5%AD%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.</span> <span class="toc-text">用矩阵来祭我的第一篇博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%98%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">乘法</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>

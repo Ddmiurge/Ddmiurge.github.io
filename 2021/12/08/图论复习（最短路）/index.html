@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>图论复习(最短路) - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="description" content="
+
+前言​    下学期开始讲数据结构，我自己比较想去争取一下免修。不过其实关于图论的部分基本上已经是忘得差不多了（我觉得我现在可能唯一还会的算法就是倍增求$LCA$了）。图论的部分就打算从最简单的,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">图论复习(最短路)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">图论复习(最短路)</h1>
+        <div class="stuff">
+            <span>十二月 08, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Dijkstra/" rel="tag">Dijkstra</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Floyd/" rel="tag">Floyd</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/SPFA/" rel="tag">SPFA</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><font color=darkmagenta><strong>前言</strong></font></h2><p>​    下学期开始讲数据结构，我自己比较想去争取一下免修。不过其实关于图论的部分基本上已经是忘得差不多了（我觉得我现在可能唯一还会的算法就是倍增求$LCA$了）。图论的部分就打算从最简单的最短路和最小生成树开始复习了（据说下学期数据结构的内容要求只有$Dijkstra$算法）。</p>
+<h2 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a><font color=1453ad><strong>Dijkstra</strong></font></h2><p>​    <s>它中间的k很容易打漏</s></p>
+<p>​    应该是一个荷兰人在上世纪五十年代提出来的算法吧（记不清了），用来计算<strong>非负权图</strong>的<strong>单源最短路</strong></p>
+<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a><font color=2c9678><strong>算法思路</strong></font></h3><p>​    假设起点为$S$,$dist[i]$表示从$S$到点$i$的最短路，$vis[i]$表示是否选中了这一个点($0$表示还没有选中，$1$表示已经选中)</p>
+<p>​    思路如下：</p>
+<ul>
+<li>$dist$数组初始化为$inf$,$dist[S]=0$，$vis$数组初始化为$0$</li>
+<li>重复接下来的操作$n$次（假如这个图联通的话）<ul>
+<li>从没有选中的点中选择$dist$值最小的一个点$u$,$vis[u]=1$</li>
+<li>设$v$是$u$可以直接到达的节点，$val$是这两条边的权值,$dist[v]=min(dist[v],dist[u]+val)$</li>
+</ul>
+</li>
+<li>或者说（不知道这个图到底联不联通）:<ul>
+<li>每次选的点加入集合，每次从集合中去出点来，直到集合为空为止</li>
+</ul>
+</li>
+</ul>
+<h3 id="算法的正确性"><a href="#算法的正确性" class="headerlink" title="算法的正确性"></a><font color=2a9678><strong>算法的正确性</strong></font></h3><p>​    我就根据自己的理解给一个证明了。<s>不保证正确性。</s></p>
+<p>​    每一次都是从没有选择的一群点中选择$dist$最小的点$u$。首先就是不可能存在路径$S \rightarrow mid\rightarrow u $，$mid$属于还没有选择的点当中，十的$dist$更小。这是因为这个图是没有负权的，其他的点$dist$都是更大的，这样转移过来$u$的$dist$不会更小了。所以说每次选的点的最短路长度都是求出来了的，所有的点选完了那么最短路就求出来了</p>
+<h3 id="算法的优化"><a href="#算法的优化" class="headerlink" title="算法的优化"></a><font color=2a9678><strong>算法的优化</strong></font></h3><p>​    暴力遍历数组选择节点时间复杂度为$O(n^2)$,为了优化算法，应当考虑提高选择结点的时候的效率。</p>
+<p>​    考虑用优先队列进行优化，将选择节点的效率提高到$O(\log n)$,这样算法的效率就提高了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt; pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt;Que;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijsktra</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">clr</span>(dist,<span class="number">0x3f</span>);</span><br><span class="line">    dist[S]=<span class="number">0</span>;</span><br><span class="line">    Que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>,S));</span><br><span class="line">    <span class="keyword">while</span>(Que.<span class="built_in">size</span>())&#123;</span><br><span class="line">        <span class="keyword">int</span> u=Que.<span class="built_in">top</span>().second;Que.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">if</span>(inq[u])<span class="keyword">continue</span>;</span><br><span class="line">        inq[u]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=nxt[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> v=to[i];</span><br><span class="line">            <span class="keyword">int</span> w=val[i];</span><br><span class="line">            <span class="keyword">if</span>(dist[v]&gt;dist[u]+w)&#123;</span><br><span class="line">                dist[v]=dist[u]+w;</span><br><span class="line">                Que.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(-dist[v],v));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面是一份代码的案例。<s>有自己define的语句。</s></p>
+<h2 id="Floyd"><a href="#Floyd" class="headerlink" title="Floyd"></a><font color=1453ad><strong>Floyd</strong></font></h2><p>相当简单直白的算法了。边的权值可以负可以正，无向有向均可，但是要没有负环。</p>
+<h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a><font color=2a9678><strong>算法思路</strong></font></h3><p>​    点$u$到点$v$的路径可以分分解为点$u$到点$mid$再到点$v$两条路径长度之和，所以说对于任意两个点之间的最短路，都枚举一下两个点之间转移的中间节点是多少就好了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=N;k++)<span class="comment">//枚举中间节点</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)<span class="comment">//枚举起点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=N;j++)<span class="comment">//枚举终点</span></span><br><span class="line">            dist[i][j]=<span class="built_in">min</span>(dist[i][j],dist[i][k]+dist[k][j]);</span><br></pre></td></tr></table></figure>
+
+<p>​    缺点就是比较慢，时间复杂度达到了$O(n^3)$,优点是求得多源点最短路。</p>
+<h2 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman-Ford"></a><font color=1453ad><strong>Bellman-Ford</strong></font></h2><p>相比于$Dijkstra$，可以处理有负边权的情况</p>
+<h3 id="算法思路-2"><a href="#算法思路-2" class="headerlink" title="算法思路"></a><font color=2a9678><strong>算法思路</strong></font></h3><p>假设$dist[i]$表示从$S$到点$i$的最短路，$edge$是边的结构体,其中包含两个点和对应的权值</p>
+<ul>
+<li>$dist$数组初始化为$inf$,$dist[S]=0$</li>
+<li>下面操作（松弛操作）重复$n-1$次：<ul>
+<li>枚举每一条边，$dist[edge[k].u]=min(dist[edge[k].u],dist[edge[k].v]+edge[k].val)$</li>
+</ul>
+</li>
+<li>再进行一次松弛操作，如果说松弛操作可以成功，那么就说明这个图存在负环</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Bellman_ford</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(dist,<span class="number">0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dist));</span><br><span class="line">    dist[S]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=E;j++)&#123;</span><br><span class="line">			<span class="keyword">int</span> u=edge[j].u;</span><br><span class="line">            <span class="keyword">int</span> v=edge[j].v;</span><br><span class="line">            <span class="keyword">int</span> w=edge[j].w;</span><br><span class="line">            dist[u]=<span class="built_in">min</span>(dist[u],dist[v]+w);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=E;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> u=edge[j].u;</span><br><span class="line">        <span class="keyword">int</span> v=edge[j].v;</span><br><span class="line">        <span class="keyword">int</span> w=edge[j].w;</span><br><span class="line">        <span class="keyword">if</span>(dist[u]&gt;dist[u]+dist[v]+w)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="算法的正确性-1"><a href="#算法的正确性-1" class="headerlink" title="算法的正确性"></a><font color=2a9678><strong>算法的正确性</strong></font></h3><p>​    图的最短路不会包含正权的环（假设说有正环，那么肯定是有一条边可以删掉的，建议自己画图理解一下），也不会有负环（有负环哪来的最短路）。所以说一个图的最短路最多会有$N-1$条边。</p>
+<p>​    $N$个点，$N-1$条边，其实就是一棵树，$Bellman-Ford$可以看作是以$S$作为根，一层一层地生成这棵最短路的树的一个过程，这棵树最多有$N-1$层，所以说最多只需要进行$N-1$次操作就好了，如果说还能继续的话就说明是存在负环了。</p>
+<h2 id="SPFA"><a href="#SPFA" class="headerlink" title="SPFA"></a><font color=1453ad><strong>SPFA</strong></font></h2><h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a><font color=2a9678><strong>算法思想</strong></font></h3><p>​    相当于是通过队列的方式对$Bellman-Ford$进行优化。通过队列的方式减少了多余的扫描</p>
+<ul>
+<li>$dist$初始化为无穷大，$inq$初始化为0（用来记录是否在队列里面），$dist[S]$设为$0$，$inq[S]=1$并且放入队列当中</li>
+<li>只要队列不为空：<ul>
+<li>拿出队首的元素$u$，扫描队首元素可以到达的节点$v$</li>
+<li>如果说$dist[v]&gt;dist[u]+w$,更改值，检查$v$是否在队列当中，如果说不在队列里面的话，那么放入队列里面,$inq$设置为$1$</li>
+<li>如果说一个点加入队列的次数超过了$N$说明有负环</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SPFA</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//没有对于负环的检测</span></span><br><span class="line">    <span class="built_in">memset</span>(dist,<span class="number">0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dist));</span><br><span class="line">    <span class="built_in">memset</span>(inq,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(inq));</span><br><span class="line">    dist[S]=<span class="number">0</span>;</span><br><span class="line">    inq[S]=<span class="number">1</span>;</span><br><span class="line">    Que.<span class="built_in">push</span>(S);</span><br><span class="line">    <span class="keyword">while</span>(Que.<span class="built_in">size</span>())&#123;</span><br><span class="line">        <span class="keyword">int</span> u=Que.<span class="built_in">front</span>();Que.<span class="built_in">pop</span>();</span><br><span class="line">        inq[u]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=nxt[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> v=to[i];</span><br><span class="line">            <span class="keyword">int</span> w=val[i];</span><br><span class="line">            <span class="keyword">if</span>(dist[u]&gt;dist[v]+w)&#123;</span><br><span class="line">                dist[u]=dist[v]+w;</span><br><span class="line">                <span class="keyword">if</span>(!inq[v])&#123;Que.<span class="built_in">push</span>(v);inq[v]=<span class="number">1</span>;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='95008c389b2d7760afe1'
+        data-cs=''
+        data-r='博客评论'
+        data-o='Ddmiurge'
+        data-a='Ddmiurge'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dijkstra"><span class="toc-number">2.</span> <span class="toc-text">Dijkstra</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF"><span class="toc-number">2.1.</span> <span class="toc-text">算法思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%A7"><span class="toc-number">2.2.</span> <span class="toc-text">算法的正确性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">算法的优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Floyd"><span class="toc-number">3.</span> <span class="toc-text">Floyd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF-1"><span class="toc-number">3.1.</span> <span class="toc-text">算法思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bellman-Ford"><span class="toc-number">4.</span> <span class="toc-text">Bellman-Ford</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF-2"><span class="toc-number">4.1.</span> <span class="toc-text">算法思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%A7-1"><span class="toc-number">4.2.</span> <span class="toc-text">算法的正确性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SPFA"><span class="toc-number">5.</span> <span class="toc-text">SPFA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3"><span class="toc-number">5.1.</span> <span class="toc-text">算法思想</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>

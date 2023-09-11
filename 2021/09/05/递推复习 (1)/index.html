@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>dp review (1) - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="description" content="实际上我只是贴我做的题而已不仅如此，我还是一两道题就给一篇博客
+骨牌问题(yzoj1366)Description
+　有 2 行 N 列的长方形，可以用 N 个 1*2 的骨牌铺满，但可能有很多种不,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">dp review (1)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">dp review (1)</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E9%80%92%E6%8E%A8/" rel="tag">递推</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><s>实际上我只是贴我做的题而已</s><br><s>不仅如此，我还是一两道题就给一篇博客</s></p>
+<h2 id="骨牌问题-yzoj1366"><a href="#骨牌问题-yzoj1366" class="headerlink" title="骨牌问题(yzoj1366)"></a>骨牌问题(yzoj1366)</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a><font color=#3091f2><strong>Description</strong></font></h3><blockquote>
+<p>　有 2 行 N 列的长方形，可以用 N 个<code> 1*2</code> 的骨牌铺满，但可能有很多种不同的铺法。现在给出自然数n，请回答当长方形为 2 行 n 列时，有多少种不同的铺设方法。</p>
+</blockquote>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a><font color=#3091f2><strong>Input</strong></font></h3><blockquote>
+<p>第一行一个整数t表示测试数据组数。下面的t行，每行一个整数n。</p>
+</blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a><font color=#3091f2><strong>Output</strong></font></h3><blockquote>
+<p>每组数据输出一行一个整数，表示方案总数，这个数可能很大，所以只需输出模10007后的结果。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Sample Input</th>
+<th>Sample Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3 2 5 7</td>
+<td>2 8 21</td>
+</tr>
+</tbody></table>
+<p>难得换行了，但是实际上答案是要求换行的<br>这一个比较的简单，可以看出来就是斐波那契数列<br>所以直接打表法</p>
+<blockquote>
+<p><font color=green><strong>Code</strong></font></p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 100003</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Mod 10007</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> f[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	f[<span class="number">1</span>]=<span class="number">1</span>;f[<span class="number">2</span>]=<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;maxn;i++)f[i]=(f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>])%Mod;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="keyword">int</span> t;</span><br><span class="line">		cin&gt;&gt;t;</span><br><span class="line">		cout&lt;&lt;f[t]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="爬楼梯-yzoj1367"><a href="#爬楼梯-yzoj1367" class="headerlink" title="爬楼梯(yzoj1367)"></a>爬楼梯(yzoj1367)</h3><blockquote>
+<p><font color=#3091f2><strong>Description</strong></font></p>
+</blockquote>
+<p>何老师爬楼梯，他可以每步上 1 、2或3 级，输入楼梯的级数，求不同的走法数。例如：楼梯一共有3级，他可以每步都走一级，或者第一步走一级，第二步走两级，也可以第一步走两级，第二步走一级，还有就是第一步就上3级，所以一共4种方法。</p>
+<blockquote>
+<p><font color=#3091f2><strong>Input</strong></font></p>
+</blockquote>
+<p>第一行：N、K。　　第二行：K个整数h[i]，表示坏了的楼梯的级数(1&lt;=h[i]&lt;=N)。</p>
+<blockquote>
+<p><font color=#3091f2><strong>Output</strong></font></p>
+</blockquote>
+<p>不同的走法数，这个数字可能很巨大，所以输出最后答案mod 1234567</p>
+<p>我懒得给样例了，说实话我不喜欢抄题</p>
+<blockquote>
+<p><font color=darkMagenta><strong>Analysis</strong></font></p>
+</blockquote>
+<p>这个的话把坏掉的楼梯直接变成方案数0就可以了，注意边界要特殊处理。方程的话经过推理事<br>$$<br>f[n]=f[n-1]+f[n-2]+f[n-3]<br>$$</p>
+<blockquote>
+<p><font color=green>Code</font></p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Mod 1234567</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxi 1007</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> f[maxi];</span><br><span class="line"><span class="keyword">bool</span> is_broken[maxi];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(is_broken,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(is_broken));</span><br><span class="line">	<span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(f));</span><br><span class="line">	<span class="keyword">int</span> n,k;</span><br><span class="line">	f[<span class="number">1</span>]=<span class="number">1</span>;f[<span class="number">2</span>]=<span class="number">2</span>;f[<span class="number">3</span>]=<span class="number">4</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> x;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">		is_broken[x]=<span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(is_broken[<span class="number">1</span>])&#123;</span><br><span class="line">		f[<span class="number">1</span>]=<span class="number">0</span>;f[<span class="number">2</span>]-=<span class="number">1</span>;f[<span class="number">3</span>]-=<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(is_broken[<span class="number">2</span>])&#123;</span><br><span class="line">		f[<span class="number">2</span>]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(is_broken[<span class="number">1</span>])&#123;</span><br><span class="line">			f[<span class="number">3</span>]-=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> f[<span class="number">3</span>]-=<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(is_broken[<span class="number">3</span>])&#123;</span><br><span class="line">		f[<span class="number">3</span>]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">4</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(is_broken[i])f[i]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span> f[i]=(f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>]+f[i<span class="number">-3</span>])%Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,f[n]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='95008c389b2d7760afe1'
+        data-cs=''
+        data-r='博客评论'
+        data-o='Ddmiurge'
+        data-a='Ddmiurge'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%A8%E7%89%8C%E9%97%AE%E9%A2%98-yzoj1366"><span class="toc-number">1.</span> <span class="toc-text">骨牌问题(yzoj1366)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%AC%E6%A5%BC%E6%A2%AF-yzoj1367"><span class="toc-number">1.4.</span> <span class="toc-text">爬楼梯(yzoj1367)</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>

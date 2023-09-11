@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>博弈论入门 - Ddmiurge&#39;s blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    
+    <meta name="description" content="博弈论（Game Theory）首先先说两个定义N状态:前面的一个玩家必胜P状态: 后面一个玩家必胜
+巴什博弈 （Bush Game）有一堆数量为n的物体，轮流拿，至少拿1个，至多拿k个(N&amp;gt;,"> 
+    <meta name="author" content="Ddmiurge"> 
+    <link rel="alternative" href="atom.xml" title="Ddmiurge&#39;s blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Ddmiurge&#39;s blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">博弈论入门</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">博弈论入门</h1>
+        <div class="stuff">
+            <span>九月 05, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/SG%E5%87%BD%E6%95%B0/" rel="tag">SG函数</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="tag">博弈论</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%90%AC%E8%BF%90%E8%87%AA%E6%97%A7%E5%8D%9A%E5%AE%A2/" rel="tag">搬运自旧博客</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="博弈论（Game-Theory）"><a href="#博弈论（Game-Theory）" class="headerlink" title="博弈论（Game Theory）"></a><font color=blue>博弈论（Game Theory）</font></h1><p>首先先说两个定义<br>N状态:<font color=red>前面的一个玩家</font>必胜<br>P状态: <font color=red>后面一个玩家</font>必胜</p>
+<h2 id="巴什博弈-（Bush-Game）"><a href="#巴什博弈-（Bush-Game）" class="headerlink" title="巴什博弈 （Bush Game）"></a>巴什博弈 （Bush Game）</h2><p>有一堆数量为n的物体，轮流拿，至少拿1个，至多拿k个(N&gt;K);<br>如果<code>n%（k+1）==0</code>，那么先手必败。<br><s>这一切是显而易见，毫无疑问的</s></p>
+<blockquote>
+<p>一道例题<br>Tang and Jiang are good friends. To decide whose treat it is for dinner, they are playing a game. Specifically, Tang and Jiang will alternatively write numbers (integers) on a white board. Tang writes first, then Jiang, then again Tang, etc… Moreover, assuming that the number written in the previous round is X, the next person who plays should write a number Y such that 1 &lt;= Y - X &lt;= k. The person who writes a number no smaller than N first will lose the game. Note that in the first round, Tang can write a number only within range [1, k] (both inclusive). You can assume that Tang and Jiang will always be playing optimally, as they are both very smart students.</p>
+</blockquote>
+<p>这一道题目大意上和Bush Game 差不多，但是不同的是它里面说的是写不出不小于n的就输了，那么必胜的时候就是你已经写出了n-1的时候。所以此时如果<code>(n-1)%(k+1)==0</code>那么先手必定输，否则就是后手输，因为先手那一次后可已转换为第一种情况</p>
+<h2 id="尼姆博弈-（Nim-Game）"><a href="#尼姆博弈-（Nim-Game）" class="headerlink" title="尼姆博弈 （Nim Game）"></a>尼姆博弈 （Nim Game）</h2><p>有n堆物体，每一堆的数量为a[i]个，每一次一个人任选一堆取出任意个（不能为0）<br>设k为每一堆异或的结果，如果<code>k==0</code>，那么先手必定失败，否则先手必定胜利。<br>这样来想，把每一堆的数量转换成二进制然后竖着来最低位对齐。如果说<code>k==0</code>,那么这意味这每一个列的1的个数一定会是偶数个。而第一个人取走了一些以后呢，这意味着一定一些列的1的个数为变成奇数个，那么k一定就不再等于0了。而此时后手的人只要把异或的值修正为0就可以了。<br>因为<font color=red>k不等于0了，那么这就说明k的最高位一定会是1，而这个最高位的1一定会是a[i]中的对应位上的1提供的</font>。<br>而根据异或的性质，k和a[i]异或结果为其他的异或结果。<br>我们可以在a[i]中减去一些值，是a[i]最终等于k和a[i]异或的结果，<font color=red>又因为k最高位的1是由a[i]提供的，那么那里一定会变成0，就一定会比a[i]小，而只要把这里减掉，k就又会等于0了</font></p>
+<h2 id="SG函数"><a href="#SG函数" class="headerlink" title="SG函数"></a>SG函数</h2><h3 id="公平组合游戏"><a href="#公平组合游戏" class="headerlink" title="公平组合游戏"></a>公平组合游戏</h3><p>1.双方交替来进行；<br>2.游戏进行的任意时刻，可以执行的合法行动与哪一个玩家执行无关；<br>3.当玩家无法行动的时候，就判负</p>
+<h3 id="mex运算"><a href="#mex运算" class="headerlink" title="mex运算"></a>mex运算</h3><p>$$<br>mex(S)=min{x|x\in N,x\notin S}<br>$$</p>
+<h3 id="SG函数-1"><a href="#SG函数-1" class="headerlink" title="SG函数"></a>SG函数</h3><p>对于任意状态下的x<br>$$<br>SG(x)=mex{SG(y)|y是x的后继状态}<br>$$<br>对于终止状态，SG值为0。</p>
+<blockquote>
+<p>如果某一状态后继SG有0，则当前状态为N<br>如果当前状态所有后继SG不为0，则当前为P;</p>
+</blockquote>
+<p>好的，既然已经知道了SG函数是什么，那么就有一道题了。</p>
+<h4 id="移棋子游戏"><a href="#移棋子游戏" class="headerlink" title="移棋子游戏"></a>移棋子游戏</h4><blockquote>
+<p><font color=blue><strong>Description</strong></font></p>
+</blockquote>
+<p>给定一个有N个节点的DAG图，图上某些节点上面有棋子。两名玩家交替移动棋子，玩家每一次可以将任意一颗棋子沿着有向边移动到下一个节点，当无法移动的时候，就输掉了游戏，假设双方都足够聪明，问先手必胜还是后手必胜。</p>
+<blockquote>
+<p><font color=blue><strong>Input</strong></font></p>
+</blockquote>
+<p>第一行三个整数N,M,K,表示N个节点M条边K个棋子。接下来M行，每行两个整数x,y,代表x节点到y节点的有向边再接下来K行，表示K个棋子所在的节点编号。</p>
+<blockquote>
+<p><font color=blue><strong>output</strong></font></p>
+</blockquote>
+<p>先手胜输出”win”,否则输出”lose”</p>
+<blockquote>
+<p><font color=blue><strong>Sample Input</strong></font></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">6 8 4</span><br><span class="line">2 1</span><br><span class="line">2 4</span><br><span class="line">1 4</span><br><span class="line">1 5</span><br><span class="line">4 5</span><br><span class="line">1 3</span><br><span class="line">3 5</span><br><span class="line">3 6</span><br><span class="line">1 2 4 6</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><font color=blue><strong>Sample Output</strong></font></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">win</span><br></pre></td></tr></table></figure>
+
+<p>这应该是我第一次这么抄题吧。<br>DAG图，看到这个应该回想起拓扑排序，其次，因为没有后继的点$SG$值为0，而每一个点的$SG$值又是有它的后继决定的。如果它的后继没有弄完，那么就不可以算。这很像拓扑排序把入度为0的点push进队列。<br>因此不难想到这一题可以用类似于拓扑排序的方法来做。我们需要存两个图，正向的和反向的。正向的图用来寻找这一个点的后继获取这一个点的$SG$值，反向的用来找祖宗，修改祖宗的出度，并把出度为0的祖宗push进入队列<br>因为有拓扑排序的基础，所以这一道题可以比较容易的做出来了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 2003</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">queue&lt;<span class="keyword">int</span>&gt;Q;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;G[maxn];<span class="comment">//正着存图</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;G_[maxn];<span class="comment">//反着存图</span></span><br><span class="line"><span class="keyword">int</span> chess[maxn],SG[maxn];<span class="comment">//记录棋子的位置 ,SG函数值 </span></span><br><span class="line"><span class="keyword">bool</span> vis[maxn*<span class="number">3</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,outdgr[maxn];<span class="comment">//记录点，边，出度 </span></span><br><span class="line"><span class="keyword">int</span> k; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!outdgr[i])&#123;</span><br><span class="line">			Q.<span class="built_in">push</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(!Q.<span class="built_in">empty</span>())&#123;	</span><br><span class="line">		<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(vis));	</span><br><span class="line">		<span class="keyword">int</span> u=Q.<span class="built_in">front</span>();Q.<span class="built_in">pop</span>();</span><br><span class="line">		vector&lt;<span class="keyword">int</span>&gt;::iterator iter=G[u].<span class="built_in">begin</span>();</span><br><span class="line">		<span class="keyword">int</span> maxsg=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(iter!=G[u].<span class="built_in">end</span>())&#123;</span><br><span class="line">			maxsg=<span class="built_in">max</span>(maxsg,SG[*iter]);</span><br><span class="line">			vis[SG[*iter]]=<span class="literal">true</span>;</span><br><span class="line">			iter++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> j;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=maxsg+<span class="number">1</span>;j++)<span class="keyword">if</span>(!vis[j])<span class="keyword">break</span>;</span><br><span class="line">		SG[u]=j;<span class="comment">//得到这一个点的SG值 </span></span><br><span class="line">		vector&lt;<span class="keyword">int</span>&gt;::iterator iter_=G_[u].<span class="built_in">begin</span>();</span><br><span class="line">		<span class="keyword">while</span>(iter_!=G_[u].<span class="built_in">end</span>())&#123;</span><br><span class="line">			outdgr[*iter_]--;</span><br><span class="line">			<span class="keyword">if</span>(!outdgr[*iter_])Q.<span class="built_in">push</span>(*iter_);</span><br><span class="line">			iter_++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=SG[chess[<span class="number">1</span>]];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=k;i++)ans^=SG[chess[i]];</span><br><span class="line">	<span class="keyword">if</span>(!ans)<span class="built_in">printf</span>(<span class="string">&quot;lose\n&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;win\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> ; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(outdgr,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(outdgr));</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> u,v;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;u,&amp;v);</span><br><span class="line">		G[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">		G_[v].<span class="built_in">push_back</span>(u); </span><br><span class="line">		outdgr[u]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;chess[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">solve</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>那么，That’s all.</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='95008c389b2d7760afe1'
+        data-cs=''
+        data-r='博客评论'
+        data-o='Ddmiurge'
+        data-a='Ddmiurge'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88Game-Theory%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">博弈论（Game Theory）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B4%E4%BB%80%E5%8D%9A%E5%BC%88-%EF%BC%88Bush-Game%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">巴什博弈 （Bush Game）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%BC%E5%A7%86%E5%8D%9A%E5%BC%88-%EF%BC%88Nim-Game%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">尼姆博弈 （Nim Game）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SG%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">SG函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">公平组合游戏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mex%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.2.</span> <span class="toc-text">mex运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SG%E5%87%BD%E6%95%B0-1"><span class="toc-number">1.3.3.</span> <span class="toc-text">SG函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E6%A3%8B%E5%AD%90%E6%B8%B8%E6%88%8F"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">移棋子游戏</span></a></li></ol></li></ol></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
